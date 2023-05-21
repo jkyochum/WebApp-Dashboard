@@ -1,3 +1,4 @@
-#myChart {
-    width: 50%;
+svg {
+    display: inline;
+    width: 200px;
 }
