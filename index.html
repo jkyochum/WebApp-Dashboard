@@ -111,11 +111,27 @@
                 <p>1 day ago</p>
             </article>
             <form id="messageUser">
+                <h2>Message User</h2>
                 <input type="text">
                 <input type="textarea">
-                <input type="submit">
+                <button>SEND</button>
             </form>
-            <div id="settings"></div>
+            <div id="settings">
+                <h2>Settings</h2>
+                <label for="emailNotificationsSwitch">Send Email Notifications</label>
+                <input type="checkbox" id="emailNotificationsSwitch">
+                <label for="publicProfileSwitch">Set Profile to Public</label>
+                <input type="checkbox" id="publicProfileSwitch">
+                <select id="timezone">
+                    <option value="" disabled selected hidden>Select Timezone</option>
+                    <option value="pacifc">Pacific Time</option>
+                    <option value="mountain">Mountain Time</option>
+                    <option value="central">Central Time</option>
+                    <option value="eastern">Eastern Time</option>
+                </select>
+                <button>SAVE</button>
+                <button>CANCEL</button>
+            </div>
           
         </main>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.min.js" integrity="sha512-TJ7U6JRJx5IpyvvO9atNnBzwJIoZDaQnQhb0Wmw32Rj5BQHAmJG16WzaJbDns2Wk5VG6gMt4MytZApZG47rCdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

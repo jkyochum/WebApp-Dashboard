@@ -1,4 +1,41 @@
+html {
+    background-color: #eee
+}
+
 svg {
     display: inline;
     width: 200px;
+}
+
+input[type='checkbox'] {
+    -webkit-appearance: none;
+    position: relative;
+    width: 80px;
+    height: 35px;
+    border-radius: 25px;
+    background-color: #ccc;
+    transition: background .3s;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type='checkbox']::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: 1.25rem;
+    width: 1.25rem;
+    background-color: #fff;
+    transition: left .3s;
+}
+
+input[type='checkbox']:checked {
+    background-color: darkorchid;
+}
+
+input[type='checkbox']:checked::after {
+    left: 70%;
 }
