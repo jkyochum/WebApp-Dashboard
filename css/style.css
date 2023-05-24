@@ -1,5 +1,34 @@
+:root {
+    --header-bg-color: #988ec5;
+    --nav-bg-color: #3e3a50;
+    --main-theme-bg-color: #8a7ebe;
+    --page-font: 'Martel Sans', sans-serif;
+}
+
 html {
-    background-color: #eee
+    background-color: #eee;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--page-font);
+
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--header-bg-color);
+}
+
+nav {
+    background-color: var(--nav-bg-color);
+}
+
+#navIconWrapper {
+    display: flex;
+    flex-direction: row;
 }
 
 svg {
