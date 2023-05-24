@@ -1,12 +1,16 @@
 :root {
     --header-bg-color: #988ec5;
     --nav-bg-color: #3e3a50;
-    --main-theme-bg-color: #8a7ebe;
+    --main-theme-bg-color: #7667b2;
+    --html-bg-color: #eee;
+    --widget-bg-color: #ccc;
+    --off-white: #efefef;
+    --white: #fff;
     --page-font: 'Martel Sans', sans-serif;
 }
 
 html {
-    background-color: #eee;
+    background-color: var(--html-bg-color);
 }
 
 body {
@@ -33,38 +37,56 @@ nav {
 
 svg {
     display: inline;
-    width: 200px;
+    width: 100px;
+}
+
+.socialStat {
+    background-color: var(--widget-bg-color);
+    width: 92%;
+    margin: auto;
+    border: 3px solid black;
+    border-radius: 8px;
+}
+
+.socialStat svg {
+    background-color: var(--main-theme-bg-color);
+    fill: var(--off-white);
 }
 
 input[type='checkbox'] {
     -webkit-appearance: none;
     position: relative;
-    width: 80px;
-    height: 35px;
+    width: 70px;
+    height: 30px;
     border-radius: 25px;
-    background-color: #ccc;
+    background-color: var(--widget-bg-color);
     transition: background .3s;
     outline: none;
     cursor: pointer;
 }
 
 input[type='checkbox']::after {
-    content: '';
+    content: 'OFF';
     position: absolute;
     top: 50%;
-    left: 30%;
+    left: 20%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     height: 1.25rem;
     width: 1.25rem;
-    background-color: #fff;
+    background-color: var(--white);
     transition: left .3s;
 }
 
 input[type='checkbox']:checked {
-    background-color: darkorchid;
+    background-color: var(--main-theme-bg-color);
+}
+
+input[type='checkbox']:checked::before {
+    content: 'ON';
 }
 
 input[type='checkbox']:checked::after {
-    left: 70%;
+    content: '';
+    left: 80%;
 }
