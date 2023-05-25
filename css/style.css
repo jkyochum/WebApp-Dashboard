@@ -6,11 +6,12 @@
     --header-bg-color: #988ec5;
     --nav-bg-color: #3e3a50;
     --main-theme-bg-color: #7667b2;
-    --html-bg-color: #eee;
+    --html-bg-color: #d6d6d6;
     --widget-bg-color: #ccc;
     --off-white: #efefef;
     --white: #fff;
-    --darker-grey: #aba9a9;
+    --medium-dark-grey: #aba9a9;
+    --dark-grey: #6e6e6e;
     --page-font: 'Martel Sans', sans-serif;
 }
 
@@ -22,7 +23,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: var(--page-font);
-
+    background-color: var(--off-white);
 }
 
 header {
@@ -45,34 +46,44 @@ svg {
     width: 100px;
 }
 
+#socialWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .socialStat {
-    background-color: var(--widget-bg-color);
+    background-color: var(--html-bg-color);
     width: 92%;
     margin: auto;
-    border: 1px solid var(--darker-grey);
-    border-radius: 8px;
+    border: 1px solid var(--medium-dark-grey);
+    border-radius: 7px;
+    position: relative;
 }
 
 .socialStat svg {
     background-color: var(--main-theme-bg-color);
     fill: var(--off-white);
-    float: left;
-    width: 5em;
+    margin: 18px;
     border-radius: 50%;
-    margin: 20px;
+    float: left;
 }
 
 .socialStat h3 {
     font-size: 1.4em;
     color: var(--main-theme-bg-color);
     margin: 0;
-    padding-top: 20px;
+    position: inherit;
+    top: 20px;
 }
 
 .socialStat p {
     font-size: 4em;
     margin: 0;
+    position: inherit;
+    bottom: 10px;
     height: 80px;
+    color: var(--dark-grey);
 }
 
 input[type='checkbox'] {
