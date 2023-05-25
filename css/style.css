@@ -1,3 +1,7 @@
+* {
+    border: 1px solid red;
+}
+
 :root {
     --header-bg-color: #988ec5;
     --nav-bg-color: #3e3a50;
@@ -6,6 +10,7 @@
     --widget-bg-color: #ccc;
     --off-white: #efefef;
     --white: #fff;
+    --darker-grey: #aba9a9;
     --page-font: 'Martel Sans', sans-serif;
 }
 
@@ -44,13 +49,30 @@ svg {
     background-color: var(--widget-bg-color);
     width: 92%;
     margin: auto;
-    border: 3px solid black;
+    border: 1px solid var(--darker-grey);
     border-radius: 8px;
 }
 
 .socialStat svg {
     background-color: var(--main-theme-bg-color);
     fill: var(--off-white);
+    float: left;
+    width: 5em;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+.socialStat h3 {
+    font-size: 1.4em;
+    color: var(--main-theme-bg-color);
+    margin: 0;
+    padding-top: 20px;
+}
+
+.socialStat p {
+    font-size: 4em;
+    margin: 0;
+    height: 80px;
 }
 
 input[type='checkbox'] {
