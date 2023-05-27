@@ -43,6 +43,8 @@ nav {
 
 h2 {
     text-align: left;
+    width: 92%;
+    margin: 20px auto 0;
 }
 
 svg {
