@@ -94,14 +94,14 @@ svg {
     display: flex;
     flex-direction: column;
     text-align: center;
-    gap: 40px;
+    gap: 30px;
 }
 
 #newMembersWrapper article {
     border-bottom: 1px solid var(--medium-dark-grey);
     width: 90%;
     margin: auto;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
 }
 
 #newMembersWrapper img {
@@ -112,6 +112,8 @@ svg {
     margin: 0;
     font-size: 1.4em;
     font-weight: normal;
+    line-height: .5em;
+    padding-top: 5px;
 }
 
 #newMembersWrapper a {
@@ -123,6 +125,7 @@ svg {
 #newMembersWrapper p {
     margin: 0;
     font-size: 1.2em;
+    line-height: .5em;
 }
 
 input[type='checkbox'] {
@@ -141,7 +144,7 @@ input[type='checkbox']::after {
     content: 'OFF';
     position: absolute;
     top: 50%;
-    left: 20%5;
+    left: 20%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     height: 1.25rem;
