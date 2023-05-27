@@ -90,29 +90,37 @@ svg {
     color: var(--dark-grey);
 }
 
-#newMembersWrapper {
+#newMembersWrapper,
+#recentActivityWrapper {
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 30px;
 }
 
-#newMembersWrapper article {
+#newMembersWrapper article,
+#recentActivityWrapper article {
     border-bottom: 1px solid var(--medium-dark-grey);
-    width: 90%;
+    width: 92%;
     margin: auto;
     padding-bottom: 30px;
 }
 
-#newMembersWrapper img {
+#newMembersWrapper img,
+#recentActivityWrapper img {
     border-radius: 50%;
 }
 
-#newMembersWrapper h4 {
+#newMembersWrapper h4,
+#newMembersWrapper p {
     margin: 0;
+    line-height: .5em;
+
+}
+
+#newMembersWrapper h4 {
     font-size: 1.4em;
     font-weight: normal;
-    line-height: .5em;
     padding-top: 5px;
 }
 
@@ -123,9 +131,18 @@ svg {
 }
 
 #newMembersWrapper p {
-    margin: 0;
     font-size: 1.2em;
-    line-height: .5em;
+}
+
+#recentActivityWrapper p {
+    font-size: 1.15em;
+    line-height: 1.25em;
+    margin: 0 auto;
+    width: 90%;
+}
+
+#recentActivityWrapper span {
+    font-weight: bold;
 }
 
 input[type='checkbox'] {
