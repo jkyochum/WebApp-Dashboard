@@ -7,12 +7,18 @@
     --nav-bg-color: #3e3a50;
     --main-theme-bg-color: #7667b2;
     --html-bg-color: #d6d6d6;
-    --widget-bg-color: #ccc;
-    --off-white: #efefef;
+    --widget-bg-color: #f0f0f0;
+    --toggle-bg-color-off: #ccc;
+    --off-white: #fafafa;
     --white: #fff;
+    --lightgrey: #f7f7f7;
     --medium-dark-grey: #aba9a9;
     --dark-grey: #6e6e6e;
     --page-font: 'Martel Sans', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 html {
@@ -59,7 +65,7 @@ svg {
 }
 
 .socialStat {
-    background-color: var(--html-bg-color);
+    background-color: var(--widget-bg-color);
     width: 92%;
     margin: auto;
     border: 1px solid var(--medium-dark-grey);
@@ -147,13 +153,56 @@ svg {
     font-weight: bold;
 }
 
+#messageUser {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type='text'],
+textarea,
+#messageUser button {
+    font-family: var(--page-font);
+    font-size: 1.2em;
+    width: 92%;
+    margin: auto;
+    border-radius: 5px;
+    border: 2px solid var(--medium-dark-grey);
+}
+
+input[type='text'],
+textarea {
+    background-color: var(--widget-bg-color);
+    padding-left: 10px;
+}
+
+input[type='text'] {
+    height: 50px;
+}
+
+textarea {
+    height: 135px;
+    padding-top: 5px;
+}
+
+#messageUser button {
+    height: 48px;
+    background-color: var(--main-theme-bg-color);
+    color: var(--white);
+}
+
+#messageUser button:active {
+    background-color: var(--header-bg-color);
+}
+
+
 input[type='checkbox'] {
     -webkit-appearance: none;
     position: relative;
     width: 70px;
     height: 30px;
     border-radius: 25px;
-    background-color: var(--widget-bg-color);
+    background-color: var(--toggle-bg-color-off);
     transition: background .3s;
     outline: none;
     cursor: pointer;
