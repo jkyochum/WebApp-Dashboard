@@ -1,6 +1,6 @@
-/* * {
+* {
     border: 1px solid red;
-} */
+}
 
 :root {
     --header-bg-color: #988ec5;
@@ -159,24 +159,38 @@ svg {
     gap: 15px;
 }
 
+#settings {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 input[type='text'],
 textarea,
-#messageUser button {
+#messageUser button,
+#dropDownWrapper select {
     font-family: var(--page-font);
     font-size: 1.2em;
-    width: 92%;
-    margin: auto;
     border-radius: 5px;
     border: 2px solid var(--medium-dark-grey);
 }
 
 input[type='text'],
-textarea {
+textarea,
+#messageUser button {
+    width: 92%;
+    margin: auto;
+}
+
+input[type='text'],
+textarea,
+#dropDownWrapper select {
     background-color: var(--widget-bg-color);
     padding-left: 10px;
 }
 
-input[type='text'] {
+input[type='text'],
+#dropDownWrapper select {
     height: 50px;
 }
 
@@ -193,6 +207,27 @@ textarea {
 
 #messageUser button:active {
     background-color: var(--header-bg-color);
+}
+
+#emailNotificationToggle,
+#publicProfileToggle,
+#dropDownWrapper,
+#settingsButton {
+    width: 92%;
+    margin: auto;
+}
+
+#emailNotificationToggle,
+#publicProfileToggle,
+#settingsButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#emailNotificationToggle label,
+#publicProfileToggle label {
+    font-size: 1.3em;
 }
 
 
@@ -232,4 +267,12 @@ input[type='checkbox']:checked::before {
 input[type='checkbox']:checked::after {
     content: '';
     left: 80%;
+}
+
+#dropDownWrapper select {
+    width: 100%;
+}
+
+#settingsButton button {
+    width: 45%;
 }

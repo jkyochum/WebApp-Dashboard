@@ -125,19 +125,27 @@
             </form>
             <div id="settings">
                 <h2>SETTINGS</h2>
-                <label for="emailNotificationsSwitch">Send Email Notifications</label>
-                <input type="checkbox" id="emailNotificationsSwitch">
-                <label for="publicProfileSwitch">Set Profile to Public</label>
-                <input type="checkbox" id="publicProfileSwitch">
-                <select id="timezone">
-                    <option value="" disabled selected hidden>Select Timezone</option>
-                    <option value="pacifc">Pacific Time</option>
-                    <option value="mountain">Mountain Time</option>
-                    <option value="central">Central Time</option>
-                    <option value="eastern">Eastern Time</option>
-                </select>
-                <button>SAVE</button>
-                <button>CANCEL</button>
+                <div id="emailNotificationToggle">
+                    <label for="emailNotificationsSwitch">Send Email Notifications</label>
+                    <input type="checkbox" id="emailNotificationsSwitch">
+                </div>
+                <div id="publicProfileToggle">
+                    <label for="publicProfileSwitch">Set Profile to Public</label>
+                    <input type="checkbox" id="publicProfileSwitch">
+                </div>
+                <div id="dropDownWrapper">
+                    <select id="timezone">
+                        <option value="" disabled selected hidden>Select Timezone</option>
+                        <option value="pacifc">Pacific Time</option>
+                        <option value="mountain">Mountain Time</option>
+                        <option value="central">Central Time</option>
+                        <option value="eastern">Eastern Time</option>
+                    </select>
+                </div>
+                <div id="settingsButton">
+                    <button>SAVE</button>
+                    <button>CANCEL</button>
+                </div>
             </div>
           
         </main>
