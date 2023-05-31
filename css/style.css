@@ -251,14 +251,14 @@ input[type='checkbox'] {
 }
 
 input[type='checkbox']::after {
-    content: 'OFF';
+    content: 'off';
     position: absolute;
     top: 50%;
     left: 20%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    height: 1.25rem;
-    width: 1.25rem;
+    height: 1.5rem;
+    width: 1.5rem;
     background-color: var(--white);
     transition: left .3s;
 }
@@ -272,12 +272,18 @@ input[type='checkbox']:checked::before {
 }
 
 input[type='checkbox']:checked::after {
-    content: '';
+    content: 'off';
     left: 80%;
 }
 
 #dropDownWrapper select {
     width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: var(--widget-bg-color) url(../svgs/dropdown_arrow.svg) no-repeat right;
+    background-position: calc(100% - 20px);
+    background-size: 25px;
 }
 
 #settingsButton {
