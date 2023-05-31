@@ -241,8 +241,8 @@ textarea {
 input[type='checkbox'] {
     -webkit-appearance: none;
     position: relative;
-    width: 70px;
-    height: 30px;
+    width: 111px;
+    height: 38px;
     border-radius: 25px;
     background-color: var(--toggle-bg-color-off);
     transition: background .3s;
@@ -251,7 +251,7 @@ input[type='checkbox'] {
 }
 
 input[type='checkbox']::after {
-    content: 'off';
+    content: '';
     position: absolute;
     top: 50%;
     left: 20%;
@@ -269,10 +269,15 @@ input[type='checkbox']:checked {
 
 input[type='checkbox']:checked::before {
     content: 'ON';
+    color: white;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: larger;
 }
 
 input[type='checkbox']:checked::after {
-    content: 'off';
+    content: '';
     left: 80%;
 }
 
@@ -284,6 +289,7 @@ input[type='checkbox']:checked::after {
     background: var(--widget-bg-color) url(../svgs/dropdown_arrow.svg) no-repeat right;
     background-position: calc(100% - 20px);
     background-size: 25px;
+    cursor: pointer;
 }
 
 #settingsButton {
