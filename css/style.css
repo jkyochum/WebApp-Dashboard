@@ -211,7 +211,8 @@ textarea {
     background-color: var(--main-theme-bg-color);
 }
 
-#messageUser button:active {
+#messageUser button:active,
+#settingsButton button:nth-child(1):active {
     background-color: var(--header-bg-color);
 }
 
@@ -308,4 +309,8 @@ input[type='checkbox']:checked::after {
 
 #settingsButton button:nth-child(2) {
     background-color: var(--medium-dark-grey);
+}
+
+#settingsButton button:nth-child(2):active {
+    background-color: var(--html-bg-color);
 }
