@@ -169,11 +169,20 @@ input[type='text'],
 textarea,
 #messageUser button,
 #dropDownWrapper select,
+#settingsButton button,
+input[type='checkbox']::after,
+input[type='checkbox'] {
+    border: 2px solid var(--medium-dark-grey);
+}
+
+input[type='text'],
+textarea,
+#messageUser button,
+#dropDownWrapper select,
 #settingsButton button {
     font-family: var(--page-font);
     font-size: 1.2em;
     border-radius: 5px;
-    border: 2px solid var(--medium-dark-grey);
 }
 
 input[type='text'],
