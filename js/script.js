@@ -44,17 +44,26 @@ new Chart(barCtx, {
 new Chart(donutCtx, {
     type: 'doughnut',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['Desktop', 'Tablet', 'Phones'],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1
+            label: 'MOBILE USERS',
+            data: [15, 5, 4],
+            borderWidth: 1,
+            backgroundColor: [
+                'rgb(118, 103, 178)',
+                'rgb(49, 182, 91)',
+                'rgb(26, 176, 196)'
+
+            ],
         }]
     },
     options: {
         scales: {
-            y: {
-                beginAtZero: true
+            display: false
+        },
+        plugins: {
+            legend: {
+                position: 'right'
             }
         }
     }
