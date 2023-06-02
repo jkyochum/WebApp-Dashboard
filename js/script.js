@@ -6,17 +6,24 @@ const donutCtx = document.getElementById('doughnutChart');
 new Chart(lineCtx, {
     type: 'line',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1
+            data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1900, 2250, 1500, 2500],
+            borderWidth: 1,
+            backgroundColor: 'rgba(118, 103, 178, .3)',
+            fill: true,
+            tension: .35
         }]
     },
     options: {
         scales: {
             y: {
                 beginAtZero: true
+            }
+        },
+        plugins: {
+            legend: {
+                display: false
             }
         }
     }
@@ -25,11 +32,11 @@ new Chart(lineCtx, {
 new Chart(barCtx, {
     type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1
+            data: [75, 115, 175, 125, 225, 200, 100],
+            borderWidth: 1,
+            backgroundColor: 'rgb(118, 103, 178)'
         }]
     },
     options: {
@@ -37,7 +44,13 @@ new Chart(barCtx, {
             y: {
                 beginAtZero: true
             }
-        }
+        },
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+
     }
 });
 
@@ -46,7 +59,6 @@ new Chart(donutCtx, {
     data: {
         labels: ['Desktop', 'Tablet', 'Phones'],
         datasets: [{
-            label: 'MOBILE USERS',
             data: [15, 5, 4],
             borderWidth: 1,
             backgroundColor: [
