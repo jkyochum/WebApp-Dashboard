@@ -154,6 +154,10 @@ main>div:last-child {
     margin-bottom: 0;
 }
 
+.chart:nth-of-type(-n+2) h2 {
+    margin-bottom: 30px;
+}
+
 h2 {
     text-align: left;
     width: 92%;
