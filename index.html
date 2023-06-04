@@ -46,6 +46,12 @@
             <div id="alert"><p><span>Alert:</span> You have unread messages</p><button>X</button></div>
             <article class="chart">
                 <h2>TRAFFIC</h2>
+                <div id="trafficNavbar">
+                        <input class="button" type="radio" name="toggle" id="hourly" checked/>
+                        <input class="button" type="radio" name="toggle" id="daily" />
+                        <input class="button" type="radio" name="toggle" id="weekly" />
+                        <input class="button" type="radio" name="toggle" id="monthly" />
+                </div>
                 <div class="chartWrapper">
                     <canvas id="lineChart"></canvas>
                 </div>
