@@ -153,6 +153,37 @@ main {
     background-color: var(--html-bg-color);
 }
 
+#alert {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    background-color: var(--header-bg-color);
+    justify-content: space-between;
+    border-radius: 5px;
+    margin: auto;
+    color: var(--white);
+    height: 56px;
+}
+
+#alert p {
+    font-size: 1.1em;
+    align-self: center;
+    padding-left: 15px;
+    height: 25px;
+}
+
+#alert button {
+    color: var(--white);
+    background-color: var(--header-bg-color);
+    border-radius: 5px;
+    padding-right: 15px;
+    border: none;
+}
+
+#alert span {
+    font-weight: bold;
+}
+
 .chartWrapper {
     position: relative;
     width: 400px;
