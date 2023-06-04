@@ -16,6 +16,7 @@ new Chart(lineCtx, {
         }]
     },
     options: {
+        responsive: true,
         scales: {
             y: {
                 beginAtZero: true

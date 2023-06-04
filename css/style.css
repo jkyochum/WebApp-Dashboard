@@ -14,6 +14,7 @@
     --lightgrey: #f7f7f7;
     --medium-dark-grey: #aba9a9;
     --dark-grey: #6e6e6e;
+    --bright-green: #39ff4a;
     --page-font: 'Martel Sans', sans-serif;
 }
 
@@ -36,6 +37,75 @@ header {
     display: flex;
     flex-direction: row;
     background-color: var(--header-bg-color);
+    justify-content: space-around;
+}
+
+header svg,
+.icon {
+    fill: var(--white);
+}
+
+#headerIcon {
+    align-self: center;
+    font-size: 1.8em;
+    padding-left: 12px;
+}
+
+#headerIcon a:link,
+#headerIcon a:active,
+#headerIcon a:visited,
+#userName {
+    color: var(--white);
+}
+
+#headerIcon a {
+    text-decoration: none;
+}
+
+#headerIcon span:first-child {
+    font-weight: bold;
+}
+
+#headerIcon span:last-child {
+    font-size: .5em;
+    vertical-align: top;
+}
+
+#headerIconWrapper {
+    position: relative;
+    align-self: center;
+}
+
+header svg {
+    width: 30px;
+    margin-left: 60px;
+}
+
+#notificationLight {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--bright-green);
+    position: absolute;
+    left: 86px;
+    top: -5px;
+    align-self: center;
+}
+
+#profileAvatar {
+    align-self: center;
+    padding-left: 13px;
+    border-left: 1px solid var(--medium-dark-grey);
+}
+
+#profileAvatar img {
+    border-radius: 50%;
+    width: 50px;
+}
+
+#userName {
+    align-self: center;
 }
 
 nav {
@@ -54,19 +124,24 @@ main {
 
 .chartWrapper {
     position: relative;
-    width: 100%;
+    width: 400px;
+    margin: auto;
 }
 
-main canvas,
-main>div:nth-child(n + 3) {
+main>div:nth-child(n + 3),
+.chart {
     margin-bottom: 30px;
 }
 
+
+.chart .chartWrapper canvas,
 #messageUser,
 #socialWrapper {
     padding-bottom: 30px;
 }
 
+
+.chart,
 main>div:nth-child(n + 3),
 #messageUser,
 #newMembersWrapper article,
