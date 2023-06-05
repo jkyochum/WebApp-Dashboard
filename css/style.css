@@ -37,6 +37,12 @@ body {
     background-color: var(--off-white);
 }
 
+h2 {
+    text-align: left;
+    width: 92%;
+    margin: 0 auto;
+}
+
 
 /*HEADER STYLES*/
 
@@ -48,23 +54,35 @@ header {
     height: 5em;
 }
 
-header svg,
-.icon {
-    fill: var(--white);
-}
-
-#headerIcon {
-    align-self: center;
-    font-size: 1.8em;
-    padding-left: 12px;
-}
-
 #headerIcon a:link,
 #headerIcon a:active,
 #headerIcon a:visited,
 #userName {
     color: var(--white);
 }
+
+#headerIconWrapper,
+#headerIcon,
+#notificationLight,
+#profileAvatar,
+#userName {
+    align-self: center;
+}
+
+header svg {
+    fill: var(--white);
+}
+
+#notificationLight,
+#profileAvatar img {
+    border-radius: 50%;
+}
+
+#headerIcon {
+    font-size: 1.8em;
+    padding-left: 12px;
+}
+
 
 #headerIcon a {
     text-decoration: none;
@@ -81,7 +99,6 @@ header svg,
 
 #headerIconWrapper {
     position: relative;
-    align-self: center;
     height: 32px;
 }
 
@@ -94,27 +111,19 @@ header svg {
     display: inline-block;
     width: 6px;
     height: 6px;
-    border-radius: 50%;
     background-color: var(--bright-green);
     position: absolute;
     left: 86px;
     top: -5px;
-    align-self: center;
 }
 
 #profileAvatar {
-    align-self: center;
     padding-left: 13px;
     border-left: 1px solid var(--medium-dark-grey);
 }
 
 #profileAvatar img {
-    border-radius: 50%;
     width: 50px;
-}
-
-#userName {
-    align-self: center;
 }
 
 
@@ -133,6 +142,10 @@ nav {
     justify-content: space-evenly;
 }
 
+.icon {
+    fill: var(--white);
+}
+
 #navIconWrapper .icon {
     width: 50px;
 }
@@ -142,14 +155,22 @@ nav {
 
 /*MAIN STYLES*/
 
-main {
+main,
+#pageNameWrapper {
     display: flex;
+}
+
+main {
     flex-direction: column;
     gap: 30px;
 }
 
+main>div:nth-child(n + 4),
+#dashboardTab {
+    border-bottom: 1px solid var(--medium-dark-grey);
+}
+
 #pageNameWrapper {
-    display: flex;
     flex-direction: row;
     height: 80px;
 }
@@ -166,18 +187,28 @@ main {
     background-color: var(--html-bg-color);
 }
 
+main>div:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
 
 /*ALERT STYLES*/
+
+#alert,
+#alert button {
+    background-color: var(--header-bg-color);
+    border-radius: 5px;
+    color: var(--white);
+
+}
 
 #alert {
     display: flex;
     flex-direction: row;
     width: 75%;
-    background-color: var(--header-bg-color);
     justify-content: space-between;
-    border-radius: 5px;
     margin: auto;
-    color: var(--white);
     height: 56px;
 }
 
@@ -189,9 +220,6 @@ main {
 }
 
 #alert button {
-    color: var(--white);
-    background-color: var(--header-bg-color);
-    border-radius: 5px;
     padding-right: 15px;
     border: none;
 }
@@ -203,40 +231,27 @@ main {
 
 /*CHART WIDGET STYLES*/
 
-.chartWrapper {
+.chartWrapper,
+#trafficNavbar .button::after {
     position: relative;
+}
+
+.chartWrapper {
     width: 400px;
     margin: auto;
 }
 
-.chart .chartWrapper canvas,
-#messageUser,
-#socialWrapper {
+.chart .chartWrapper canvas {
     padding-bottom: 30px;
 }
 
-.chart,
-#dashboardTab,
-main>div:nth-child(n + 4),
-#messageUser,
-#newMembersWrapper article,
-#recentActivityWrapper article {
+.chart {
     border-bottom: 1px solid var(--medium-dark-grey);
 }
 
-main>div:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-}
-
-.chart:nth-of-type(-n+2) h2 {
+.chart:nth-of-type(-n+2) h2,
+#trafficNavbar {
     margin-bottom: 30px;
-}
-
-h2 {
-    text-align: left;
-    width: 92%;
-    margin: 0 auto;
 }
 
 #trafficNavbar {
@@ -245,7 +260,6 @@ h2 {
     background-color: var(--off-white);
     justify-content: center;
     gap: 14px;
-    margin-bottom: 30px;
 }
 
 #trafficNavbar .button {
@@ -260,7 +274,6 @@ h2 {
 }
 
 #trafficNavbar .button::after {
-    position: relative;
     top: 10px;
 }
 
@@ -353,6 +366,7 @@ h2 {
     width: 92%;
     margin: auto;
     padding-bottom: 30px;
+    border-bottom: 1px solid var(--medium-dark-grey);
 }
 
 #newMembersWrapper article:last-child,
@@ -409,6 +423,13 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    border-bottom: 1px solid var(--medium-dark-grey);
+
+}
+
+#messageUser,
+#socialWrapper {
+    padding-bottom: 30px;
 }
 
 
