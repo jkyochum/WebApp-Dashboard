@@ -19,6 +19,9 @@
     --page-font: 'Martel Sans', sans-serif;
 }
 
+
+/*BASE PAGE STYLES*/
+
 * {
     box-sizing: border-box;
 }
@@ -33,6 +36,9 @@ body {
     font-family: var(--page-font);
     background-color: var(--off-white);
 }
+
+
+/*HEADER STYLES*/
 
 header {
     display: flex;
@@ -111,6 +117,9 @@ header svg {
     align-self: center;
 }
 
+
+/*NAVIGATION BAR STYLES*/
+
 nav {
     background-color: var(--nav-bg-color);
 }
@@ -129,6 +138,9 @@ nav {
 }
 
 #navIconWrapper .icon:hover {}
+
+
+/*MAIN STYLES*/
 
 main {
     display: flex;
@@ -153,6 +165,9 @@ main {
     width: 64%;
     background-color: var(--html-bg-color);
 }
+
+
+/*ALERT STYLES*/
 
 #alert {
     display: flex;
@@ -184,6 +199,9 @@ main {
 #alert span {
     font-weight: bold;
 }
+
+
+/*CHART WIDGET STYLES*/
 
 .chartWrapper {
     position: relative;
@@ -271,15 +289,18 @@ h2 {
     color: var(--white);
 }
 
-svg {
-    display: inline;
-    width: 100px;
-}
+
+/*SOCIAL MEDIA WIDGET STYLES*/
 
 #socialWrapper {
     display: flex;
     flex-direction: column;
     gap: 24px;
+}
+
+#socialWrapper svg {
+    display: inline;
+    width: 100px;
 }
 
 .socialStat {
@@ -315,6 +336,9 @@ svg {
     height: 80px;
     color: var(--dark-grey);
 }
+
+
+/*NEW MEMBERS STYLES*/
 
 #newMembersWrapper,
 #recentActivityWrapper {
@@ -364,6 +388,9 @@ svg {
     font-size: 1.2em;
 }
 
+
+/*RECENT ACTIVITY STYLES*/
+
 #recentActivityWrapper p {
     font-size: 1.15em;
     line-height: 1.25em;
@@ -375,11 +402,17 @@ svg {
     font-weight: bold;
 }
 
+
+/*MESSAGE USER STYLES*/
+
 #messageUser {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
+
+
+/*SETTINGS STYLES*/
 
 #settings {
     display: flex;
