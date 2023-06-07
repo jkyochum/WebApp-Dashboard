@@ -333,25 +333,27 @@ main>div:last-child {
     float: left;
 }
 
+.socialStat h3,
+.socialStat p {
+    margin: 0;
+    position: inherit;
+}
+
 .socialStat h3 {
     font-size: 1.4em;
     color: var(--main-theme-bg-color);
-    margin: 0;
-    position: inherit;
     top: 20px;
 }
 
 .socialStat p {
     font-size: 4em;
-    margin: 0;
-    position: inherit;
     bottom: 10px;
     height: 80px;
     color: var(--dark-grey);
 }
 
 
-/*NEW MEMBERS STYLES*/
+/*NEW MEMBERS & RECENT ACTIVITY STYLES*/
 
 #newMembersWrapper,
 #recentActivityWrapper {
@@ -402,9 +404,6 @@ main>div:last-child {
     font-size: 1.2em;
 }
 
-
-/*RECENT ACTIVITY STYLES*/
-
 #recentActivityWrapper p {
     font-size: 1.15em;
     line-height: 1.25em;
@@ -417,14 +416,13 @@ main>div:last-child {
 }
 
 
-/*MESSAGE USER STYLES*/
+/*MESSAGE USER & SETTINGS STYLES*/
 
 #messageUser {
     display: flex;
     flex-direction: column;
     gap: 15px;
     border-bottom: 1px solid var(--medium-dark-grey);
-
 }
 
 #messageUser,
@@ -432,11 +430,14 @@ main>div:last-child {
     padding-bottom: 30px;
 }
 
-
-/*SETTINGS STYLES*/
+#settings,
+#emailNotificationToggle,
+#publicProfileToggle,
+#settingsButton {
+    display: flex;
+}
 
 #settings {
-    display: flex;
     flex-direction: column;
     gap: 20px;
 }
@@ -463,7 +464,11 @@ textarea,
 
 input[type='text'],
 textarea,
-#messageUser button {
+#messageUser button,
+#emailNotificationToggle,
+#publicProfileToggle,
+#dropDownWrapper,
+#settingsButton {
     width: 92%;
     margin: auto;
 }
@@ -486,13 +491,19 @@ textarea {
 }
 
 #messageUser button,
-#settingsButton button {
-    height: 55px;
+#settingsButton button,
+input[type='checkbox']:checked::before {
     color: var(--white);
 }
 
 #messageUser button,
-#settingsButton button:nth-child(1) {
+#settingsButton button {
+    height: 55px;
+}
+
+#messageUser button,
+#settingsButton button:nth-child(1),
+input[type='checkbox']:checked {
     background-color: var(--main-theme-bg-color);
 }
 
@@ -503,16 +514,7 @@ textarea {
 
 #emailNotificationToggle,
 #publicProfileToggle,
-#dropDownWrapper,
 #settingsButton {
-    width: 92%;
-    margin: auto;
-}
-
-#emailNotificationToggle,
-#publicProfileToggle,
-#settingsButton {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
@@ -528,9 +530,15 @@ textarea {
     margin-bottom: 1.5em;
 }
 
+input[type='checkbox'],
+#dropDownWrapper select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
 
 input[type='checkbox'] {
-    -webkit-appearance: none;
     position: relative;
     width: 127px;
     height: 51px;
@@ -538,13 +546,19 @@ input[type='checkbox'] {
     background-color: var(--toggle-bg-color-off);
     transition: background .3s;
     outline: none;
-    cursor: pointer;
 }
 
+input[type='checkbox']::after,
+input[type='checkbox']:checked::after {
+    content: '';
+}
+
+input[type='checkbox']::after,
+input[type='checkbox']:checked::before {
+    position: absolute;
+}
 
 input[type='checkbox']::after {
-    content: '';
-    position: absolute;
     top: 50%;
     left: 20%;
     transform: translate(-50%, -50%);
@@ -555,33 +569,22 @@ input[type='checkbox']::after {
     transition: left .3s;
 }
 
-input[type='checkbox']:checked {
-    background-color: var(--main-theme-bg-color);
-}
-
 input[type='checkbox']:checked::before {
     content: 'ON';
-    color: white;
-    position: absolute;
     top: 16px;
     left: 15px;
     font-size: large;
 }
 
 input[type='checkbox']:checked::after {
-    content: '';
     left: 80%;
 }
 
 #dropDownWrapper select {
     width: 100%;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     background: var(--widget-bg-color) url(../svgs/dropdown_arrow.svg) no-repeat right;
     background-position: calc(100% - 20px);
     background-size: 25px;
-    cursor: pointer;
 }
 
 #settingsButton {
