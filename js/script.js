@@ -71,12 +71,15 @@ new Chart(donutCtx, {
         }]
     },
     options: {
+        responsive: true,
+        maintainAspectRatio: false,
         scales: {
             display: false
         },
         plugins: {
             legend: {
-                position: 'right'
+                position: 'right',
+
             }
         }
     }

@@ -137,10 +137,10 @@ nav {
 #navIconWrapper {
     display: flex;
     flex-direction: row;
-    height: 4em;
-    width: 80%;
+    height: 3.5em;
+    width: 84%;
     margin: auto;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .icon {
@@ -148,7 +148,7 @@ nav {
 }
 
 #navIconWrapper .icon {
-    width: 50px;
+    width: 33px;
 }
 
 #navIconWrapper .icon:hover {}
@@ -163,7 +163,7 @@ main,
 
 main {
     flex-direction: column;
-    gap: 30px;
+    gap: 15px;
 }
 
 main>div:nth-child(n + 4),
@@ -173,11 +173,12 @@ main>div:nth-child(n + 4),
 
 #pageNameWrapper {
     flex-direction: row;
-    height: 80px;
+    height: 55px;
 }
 
 #pageName {
-    font-size: 1.8em;
+    font-size: 1.1em;
+    font-weight: 600;
     width: 41%;
     text-align: center;
 }
@@ -207,14 +208,15 @@ main>div:last-child {
 #alert {
     display: flex;
     flex-direction: row;
-    width: 75%;
+    width: 92%;
     justify-content: space-between;
     margin: auto;
-    height: 56px;
+    height: 38px;
 }
 
 #alert p {
-    font-size: 1.1em;
+    font-size: .9em;
+    font-weight: 100;
     align-self: center;
     padding-left: 15px;
     height: 25px;
@@ -226,7 +228,7 @@ main>div:last-child {
 }
 
 #alert span {
-    font-weight: bold;
+    font-weight: 600;
 }
 
 
@@ -238,21 +240,27 @@ main>div:last-child {
 }
 
 .chartWrapper {
-    width: 400px;
+    width: 92%;
     margin: auto;
 }
 
 .chart .chartWrapper canvas {
-    padding-bottom: 30px;
+    padding-bottom: 17px;
 }
 
 .chart {
     border-bottom: 1px solid var(--medium-dark-grey);
 }
 
-.chart:nth-of-type(-n+2) h2,
+.chart:nth-of-type(3) .chartWrapper {
+    height: 200px;
+    width: 80%;
+}
+
+.chart h2,
 #trafficNavbar {
-    margin-bottom: 30px;
+    font-size: 1em;
+    font-weight: 600;
 }
 
 #trafficNavbar {
@@ -260,47 +268,52 @@ main>div:last-child {
     flex-direction: row;
     background-color: var(--off-white);
     justify-content: center;
-    gap: 14px;
+    gap: 11px;
+    margin-bottom: 30px;
+    width: 92%;
+    margin: 0 auto 30px;
 }
 
 #trafficNavbar .button {
-    width: 85px;
-    height: 45px;
+    width: 69px;
+    height: 31px;
     border-radius: 25px;
     -webkit-appearance: none;
     margin: 0;
     cursor: pointer;
     font-family: var(--page-font);
-    font-size: 1.1em;
-}
-
-#trafficNavbar .button::after {
-    top: 10px;
-}
-
-#trafficNavbar .button:nth-of-type(1)::after {
-    content: 'Hourly';
-    left: 13px;
-}
-
-#trafficNavbar .button:nth-of-type(2)::after {
-    content: 'Daily';
-    left: 21px;
-}
-
-#trafficNavbar .button:nth-of-type(3)::after {
-    content: 'Weekly';
-    left: 11px;
-}
-
-#trafficNavbar .button:nth-of-type(4)::after {
-    content: 'Monthly';
-    left: 8px;
+    font-size: .8em;
+    font-weight: 600;
 }
 
 #trafficNavbar .button:checked {
     background-color: var(--darker-bright-green);
     color: var(--white);
+}
+
+
+#trafficNavbar .button::after {
+    top: 6px;
+}
+
+#trafficNavbar .button:nth-of-type(1)::after {
+    content: 'Hourly';
+    left: 12px;
+}
+
+#trafficNavbar .button:nth-of-type(2)::after {
+    content: 'Daily';
+    left: 17px;
+}
+
+#trafficNavbar .button:nth-of-type(3)::after {
+    content: 'Weekly';
+    left: 10px;
+}
+
+#trafficNavbar .button:nth-of-type(4)::after {
+    content: 'Monthly';
+    left: 7px;
 }
 
 
