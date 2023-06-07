@@ -3,7 +3,7 @@
 } */
 
 :root {
-    --header-bg-color: #988ec5;
+    --header-bg-color: #7f6ecc;
     --nav-bg-color: #3e3a50;
     --main-theme-bg-color: #7667b2;
     --html-bg-color: #d6d6d6;
@@ -51,7 +51,7 @@ header {
     flex-direction: row;
     background-color: var(--header-bg-color);
     justify-content: space-around;
-    height: 5em;
+    height: 4em;
 }
 
 #headerIcon a:link,
@@ -67,10 +67,14 @@ header {
 #profileAvatar,
 #userName {
     align-self: center;
+    font-size: .8em;
+    font-weight: 200;
 }
 
 header svg {
     fill: var(--white);
+    width: 21px;
+    margin-left: 16px;
 }
 
 #notificationLight,
@@ -79,8 +83,8 @@ header svg {
 }
 
 #headerIcon {
-    font-size: 1.8em;
-    padding-left: 12px;
+    font-size: 1.3em;
+    padding-left: 4px;
 }
 
 
@@ -89,41 +93,38 @@ header svg {
 }
 
 #headerIcon span:first-child {
-    font-weight: bold;
+    font-weight: 500;
 }
 
 #headerIcon span:last-child {
-    font-size: .5em;
-    vertical-align: top;
+    font-size: .45em;
+    vertical-align: super;
+    font-weight: 600;
 }
 
 #headerIconWrapper {
     position: relative;
-    height: 32px;
-}
-
-header svg {
-    width: 30px;
-    margin-left: 60px;
+    height: 22px;
 }
 
 #notificationLight {
     display: inline-block;
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
     background-color: var(--bright-green);
     position: absolute;
-    left: 86px;
-    top: -5px;
+    left: 34px;
+    top: -6px;
 }
 
 #profileAvatar {
-    padding-left: 13px;
+    padding-left: 9px;
     border-left: 1px solid var(--medium-dark-grey);
 }
 
 #profileAvatar img {
-    width: 50px;
+    width: 38px;
+    vertical-align: middle;
 }
 
 
