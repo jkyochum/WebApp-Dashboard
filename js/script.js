@@ -55,6 +55,20 @@ new Chart(barCtx, {
     }
 });
 
+//doughnut chart legend margin plugin
+const legendMargin = {
+    id: 'legendMargin',
+    afterInit(chart, args, options) {
+        console.log(chart.legend);
+        const fitValue = chart.legend.fit;
+        chart.legend.fit = function fit() {
+            fitValue.bind(chart.legend)();
+            let left = this.left += 800;
+            return left;
+        }
+    }
+}
+
 new Chart(donutCtx, {
     type: 'doughnut',
     data: {
@@ -79,8 +93,16 @@ new Chart(donutCtx, {
         plugins: {
             legend: {
                 position: 'right',
-
+                labels: {
+                    boxWidth: 20,
+                    align: 'right',
+                    font: {
+                        family: "'Martel Sans', sans-serif",
+                        weight: 'bold'
+                    }
+                }
             }
         }
-    }
+    },
+    plugins: [legendMargin]
 });
