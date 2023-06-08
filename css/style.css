@@ -20,7 +20,7 @@
 }
 
 
-/*BASE PAGE STYLES*/
+/* BASE PAGE STYLES */
 
 * {
     box-sizing: border-box;
@@ -47,7 +47,7 @@ h2 {
 }
 
 
-/*HEADER STYLES*/
+/* HEADER STYLES */
 
 header {
     display: flex;
@@ -131,7 +131,7 @@ header svg {
 }
 
 
-/*NAVIGATION BAR STYLES*/
+/* NAVIGATION BAR STYLES */
 
 nav {
     background-color: var(--nav-bg-color);
@@ -158,7 +158,7 @@ nav {
 #navIconWrapper .icon:hover {}
 
 
-/*MAIN STYLES*/
+/* MAIN STYLES */
 
 main,
 #pageNameWrapper {
@@ -200,7 +200,7 @@ main>div:last-child {
 }
 
 
-/*ALERT STYLES*/
+/* ALERT STYLES */
 
 #alert,
 #alert button {
@@ -236,7 +236,7 @@ main>div:last-child {
 }
 
 
-/*CHART WIDGET STYLES*/
+/* CHART WIDGET STYLES */
 
 .chartWrapper,
 #trafficNavbar .button::after {
@@ -284,12 +284,6 @@ main>div:last-child {
     font-weight: 600;
 }
 
-/* 
-#trafficNavbar .button::selection {
-    color: none;
-    background: none;
-} */
-
 #trafficNavbar .button:checked {
     background-color: var(--darker-bright-green);
     color: var(--white);
@@ -322,7 +316,7 @@ main>div:last-child {
 
 
 
-/*SOCIAL MEDIA WIDGET STYLES*/
+/* SOCIAL MEDIA WIDGET STYLES */
 
 #socialWrapper {
     display: flex;
@@ -375,7 +369,7 @@ main>div:last-child {
 }
 
 
-/*NEW MEMBERS & RECENT ACTIVITY STYLES*/
+/* NEW MEMBERS & RECENT ACTIVITY STYLES */
 
 #newMembersWrapper,
 #recentActivityWrapper {
@@ -442,7 +436,7 @@ main>div:last-child {
     font-weight: 600;
 }
 
-/*MESSAGE USER & SETTINGS STYLES*/
+/* MESSAGE USER & SETTINGS STYLES */
 
 #messageUser,
 #settings,
@@ -659,6 +653,9 @@ input[type='checkbox']:checked::after {
 }
 
 @media (min-width: 768px) {
+
+    /* BASE PAGE STYLES */
+
     body {
         display: grid;
         grid-template-columns: 66px 1fr 1fr;
@@ -667,6 +664,8 @@ input[type='checkbox']:checked::after {
             'navigation main main'
             'navigation main main';
     }
+
+    /* HEADER STYLES */
 
     header {
         height: 5em;
@@ -690,6 +689,8 @@ input[type='checkbox']:checked::after {
         padding-right: 10px;
     }
 
+    /* NAVIGATION BAR STYLES */
+
     #navIconWrapper {
         flex-direction: column;
         width: 100%;
@@ -700,4 +701,19 @@ input[type='checkbox']:checked::after {
         align-self: center;
         width: 36px;
     }
+
+    /* MAIN STYLES */
+
+    #pageName {
+        width: 18%;
+    }
+
+    #dashboardTab {
+        width: 82%;
+    }
+
+
+
+
+
 }
