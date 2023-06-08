@@ -429,7 +429,6 @@ main>div:last-child {
     font-weight: 600;
 }
 
-
 /*MESSAGE USER & SETTINGS STYLES*/
 
 #messageUser {
@@ -497,11 +496,15 @@ textarea,
 input[type='text'],
 #dropDownWrapper select {
     height: 50px;
+    font-size: 1em;
+    opacity: .5;
 }
 
 textarea {
-    height: 135px;
+    height: 156px;
     padding-top: 5px;
+    font-size: 1em;
+    opacity: .5;
 }
 
 #messageUser button,
@@ -512,13 +515,18 @@ input[type='checkbox']:checked::before {
 
 #messageUser button,
 #settingsButton button {
-    height: 55px;
+    height: 50px;
 }
 
 #messageUser button,
 #settingsButton button:nth-child(1),
 input[type='checkbox']:checked {
     background-color: var(--main-theme-bg-color);
+}
+
+#messageUser button {
+    font-size: .9em;
+    font-weight: 200;
 }
 
 #messageUser button:active,
