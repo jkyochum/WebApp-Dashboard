@@ -320,17 +320,18 @@ main>div:last-child {
 #socialWrapper {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 14px;
 }
 
 #socialWrapper svg {
     display: inline;
-    width: 100px;
+    width: 70px;
 }
 
 .socialStat {
     background-color: var(--widget-bg-color);
     width: 92%;
+    height: 99px;
     margin: auto;
     border: 1px solid var(--medium-dark-grey);
     border-radius: 7px;
@@ -352,16 +353,18 @@ main>div:last-child {
 }
 
 .socialStat h3 {
-    font-size: 1.4em;
+    font-size: 1.1em;
     color: var(--main-theme-bg-color);
-    top: 20px;
+    top: 15px;
+    font-weight: 500;
 }
 
 .socialStat p {
-    font-size: 4em;
-    bottom: 10px;
+    font-size: 2.8em;
+    bottom: 5px;
     height: 80px;
     color: var(--dark-grey);
+    font-weight: 200;
 }
 
 
