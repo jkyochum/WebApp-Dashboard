@@ -712,6 +712,12 @@ input[type='checkbox']:checked::after {
         width: 82%;
     }
 
+    /* ALERT STYLES  */
+
+    #alert {
+        width: 95%;
+    }
+
 
 
 
