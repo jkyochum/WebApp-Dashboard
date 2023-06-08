@@ -375,7 +375,7 @@ main>div:last-child {
     display: flex;
     flex-direction: column;
     text-align: center;
-    gap: 30px;
+    gap: 12px;
 }
 
 #newMembersWrapper article,
@@ -394,40 +394,39 @@ main>div:last-child {
 #newMembersWrapper img,
 #recentActivityWrapper img {
     border-radius: 50%;
+    width: 63px;
 }
 
 #newMembersWrapper h4,
 #newMembersWrapper p {
+    font-size: .9em;
     margin: 0;
     line-height: .5em;
-
 }
 
 #newMembersWrapper h4 {
-    font-size: 1.4em;
+    font-size: .8em;
     font-weight: normal;
     padding-top: 5px;
 }
 
 #newMembersWrapper a {
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: .9em;
     color: var(--main-theme-bg-color);
 }
 
-#newMembersWrapper p {
-    font-size: 1.2em;
-}
-
 #recentActivityWrapper p {
-    font-size: 1.15em;
+    font-size: .8em;
     line-height: 1.25em;
     margin: 0 auto;
-    width: 90%;
+    width: 93%;
+    font-weight: 300;
 }
 
 #recentActivityWrapper span {
     font-weight: bold;
+    font-weight: 600;
 }
 
 
