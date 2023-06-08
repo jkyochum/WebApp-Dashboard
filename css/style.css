@@ -283,6 +283,10 @@ main>div:last-child {
     font-weight: 600;
 }
 
+#trafficNavbar button:active {
+    background: none;
+}
+
 #trafficNavbar .button:checked {
     background-color: var(--darker-bright-green);
     color: var(--white);
@@ -452,7 +456,7 @@ main>div:last-child {
 
 #settings {
     flex-direction: column;
-    gap: 20px;
+    gap: 14px;
 }
 
 input[type='text'],
@@ -497,14 +501,14 @@ input[type='text'],
 #dropDownWrapper select {
     height: 50px;
     font-size: 1em;
-    opacity: .5;
+    opacity: .8;
 }
 
 textarea {
     height: 156px;
     padding-top: 5px;
     font-size: 1em;
-    opacity: .5;
+    opacity: .8;
 }
 
 #messageUser button,
@@ -543,13 +547,14 @@ input[type='checkbox']:checked {
 
 #emailNotificationToggle label,
 #publicProfileToggle label {
-    font-size: 1.3em;
     align-self: center;
+    font-size: .9em;
+    font-weight: 400;
 }
 
 #emailNotificationToggle,
 #publicProfileToggle {
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
 }
 
 input[type='checkbox'],
@@ -562,8 +567,8 @@ input[type='checkbox'],
 
 input[type='checkbox'] {
     position: relative;
-    width: 127px;
-    height: 51px;
+    width: 88px;
+    height: 38px;
     border-radius: 25px;
     background-color: var(--toggle-bg-color-off);
     transition: background .3s;
@@ -585,17 +590,18 @@ input[type='checkbox']::after {
     left: 20%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    height: 2.25rem;
-    width: 2.25rem;
+    height: 26px;
+    width: 26px;
     background-color: var(--white);
     transition: left .3s;
 }
 
 input[type='checkbox']:checked::before {
     content: 'ON';
-    top: 16px;
-    left: 15px;
-    font-size: large;
+    top: 9px;
+    left: 8px;
+    font-size: 1.1em;
+    font-weight: 100;
 }
 
 input[type='checkbox']:checked::after {
@@ -614,7 +620,13 @@ input[type='checkbox']:checked::after {
 }
 
 #settingsButton button {
-    width: 45%;
+    width: 47%;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+#settingsButton:active {
+    background: none;
 }
 
 #settingsButton button:nth-child(2) {
