@@ -17,6 +17,7 @@ new Chart(lineCtx, {
     },
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
             y: {
                 beginAtZero: true
@@ -55,20 +56,6 @@ new Chart(barCtx, {
     }
 });
 
-//doughnut chart legend margin plugin
-const legendMargin = {
-    id: 'legendMargin',
-    afterInit(chart, args, options) {
-        console.log(chart.legend);
-        const fitValue = chart.legend.fit;
-        chart.legend.fit = function fit() {
-            fitValue.bind(chart.legend)();
-            let left = this.left += 800;
-            return left;
-        }
-    }
-}
-
 new Chart(donutCtx, {
     type: 'doughnut',
     data: {
@@ -103,6 +90,5 @@ new Chart(donutCtx, {
                 }
             }
         }
-    },
-    plugins: [legendMargin]
+    }
 });

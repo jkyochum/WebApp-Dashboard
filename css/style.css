@@ -236,7 +236,7 @@ main>div:last-child {
 }
 
 
-/* CHART WIDGET STYLES */
+/* CHART STYLES */
 
 .chartWrapper,
 #trafficNavbar .button::after {
@@ -654,6 +654,7 @@ input[type='checkbox']:checked::after {
 
 @media (min-width: 768px) {
 
+
     /* BASE PAGE STYLES */
 
     body {
@@ -664,6 +665,7 @@ input[type='checkbox']:checked::after {
             'navigation main main'
             'navigation main main';
     }
+
 
     /* HEADER STYLES */
 
@@ -689,6 +691,7 @@ input[type='checkbox']:checked::after {
         padding-right: 10px;
     }
 
+
     /* NAVIGATION BAR STYLES */
 
     #navIconWrapper {
@@ -702,6 +705,7 @@ input[type='checkbox']:checked::after {
         width: 36px;
     }
 
+
     /* MAIN STYLES */
 
     #pageName {
@@ -712,11 +716,36 @@ input[type='checkbox']:checked::after {
         width: 82%;
     }
 
+
     /* ALERT STYLES  */
 
     #alert {
         width: 95%;
     }
+
+
+    /* CHART STYLES */
+
+    .chart h2 {
+        width: 50%;
+        float: left;
+        margin-left: 19px;
+    }
+
+    #trafficNavbar {
+        width: calc(50% - 19px);
+        gap: 8px;
+    }
+
+    .chart:nth-of-type(1) .chartWrapper {
+        width: 96%;
+        height: 250px;
+    }
+
+    #lineChart {
+        display: inline-block;
+    }
+
 
 
 
