@@ -753,12 +753,6 @@ input[type='checkbox']:checked::after {
 
     /* CHART STYLES */
 
-    .chartWidgets {
-        /* grid-template-areas:
-            'line line'
-            'bar doughnut'; */
-    }
-
     .chart h2 {
         width: 50%;
         float: left;
@@ -853,8 +847,6 @@ input[type='checkbox']:checked::after {
         height: 90px;
     }
 
-
-
     #newMembersWrapper h2,
     #recentActivityWrapper h2 {
         width: 96%;
@@ -908,6 +900,29 @@ input[type='checkbox']:checked::after {
     }
 
 
+    /* MESSAGE USER & SETTINGS STYLES */
 
+    #messageUser h2,
+    #searchUserText,
+    #messageUserText,
+    #messageUser button,
+    #settings h2,
+    #emailNotificationToggle,
+    #publicProfileToggle,
+    #dropDownWrapper,
+    #settingsButton {
+        width: 96%;
+    }
+
+    #emailNotificationToggle,
+    #publicProfileToggle {
+        justify-content: flex-start;
+        gap: 30px;
+    }
+
+    #emailNotificationsSwitch label,
+    #publicProfileToggle label {
+        width: 25%;
+    }
 
 }
