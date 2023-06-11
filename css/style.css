@@ -170,6 +170,7 @@ main {
     grid-area: main;
 }
 
+#socialWidgets,
 main>div:nth-child(n + 4),
 #dashboardTab {
     border-bottom: 1px solid var(--medium-dark-grey);
@@ -236,10 +237,6 @@ main>div:last-child {
 
 
 /* CHART STYLES */
-/* 
-#chartWidgets {
-    display: grid;
-} */
 
 .chartWrapper,
 #trafficNavbar .button::after {
@@ -257,6 +254,7 @@ main>div:last-child {
 
 .chart {
     border-bottom: 1px solid var(--medium-dark-grey);
+    margin-bottom: 10px;
 }
 
 .chart:nth-of-type(1) {
@@ -269,6 +267,7 @@ main>div:last-child {
 
 .chart:nth-of-type(3) {
     grid-area: doughnut;
+    margin-bottom: 0;
 }
 
 .chart:nth-of-type(1) .chartWrapper {
@@ -341,6 +340,10 @@ main>div:last-child {
 
 /* SOCIAL MEDIA STYLES */
 
+#socialWidgets h2 {
+    margin-bottom: 15px;
+}
+
 #socialWrapper {
     display: flex;
     flex-direction: column;
@@ -406,7 +409,8 @@ main>div:last-child {
 #recentActivityWrapper article {
     width: 92%;
     margin: auto;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
+    padding-top: 2px;
     border-bottom: 1px solid var(--medium-dark-grey);
 }
 
@@ -834,6 +838,74 @@ input[type='checkbox']:checked::after {
         font-size: 2.7em;
     }
 
+    /* NEW MEMBERS & RECENT ACTIVITY STYLES */
+
+    #newMembersWrapper,
+    #recentActivityWrapper {
+        text-align: left;
+        gap: 0;
+    }
+
+    #newMembersWrapper article,
+    #recentActivityWrapper article {
+        padding: 15px 0 7.5px;
+        width: 96%;
+        height: 90px;
+    }
+
+
+
+    #newMembersWrapper h2,
+    #recentActivityWrapper h2 {
+        width: 96%;
+    }
+
+    #newMembersWrapper img,
+    #newMembersWrapper a,
+    #recentActivityWrapper img {
+        float: left;
+    }
+
+    #newMembersWrapper img,
+    #recentActivityWrapper img {
+        margin-right: 15px;
+        width: 60px;
+    }
+
+    #newMembersWrapper h4,
+    #recentActivityWrapper p:nth-of-type(1) {
+        margin-top: 15px;
+    }
+
+    #newMembersWrapper p {
+        text-align: right;
+    }
+
+    .arrow {
+        position: relative;
+        text-align: right;
+        bottom: 30px;
+    }
+
+    .arrow span {
+        display: inline-block;
+        width: 10px;
+        height: 2px;
+        border-radius: 25px;
+        background-color: var(--medium-dark-grey);
+    }
+
+    .arrow span:nth-of-type(1) {
+        position: absolute;
+        top: 11px;
+        transform: rotate(35deg);
+        z-index: 2;
+    }
+
+    .arrow span:nth-of-type(2) {
+        display: inline-block;
+        transform: rotate(-35deg);
+    }
 
 
 
