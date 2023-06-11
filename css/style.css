@@ -236,10 +236,10 @@ main>div:last-child {
 
 
 /* CHART STYLES */
-
+/* 
 #chartWidgets {
     display: grid;
-}
+} */
 
 .chartWrapper,
 #trafficNavbar .button::after {
@@ -773,6 +773,35 @@ input[type='checkbox']:checked::after {
 
     #lineChart {
         display: inline-block;
+    }
+
+    .chart:nth-of-type(2),
+    .chart:nth-of-type(3) {
+        width: 50%;
+        display: inline-block;
+        height: 227px;
+        border-left: 1px solid var(--medium-dark-grey);
+    }
+
+    .chart:nth-of-type(2) {
+        float: left;
+    }
+
+    .chart:nth-of-type(2) .chartWrapper,
+    .chart:nth-of-type(3) .chartWrapper {
+        height: 184px;
+    }
+
+    #barChart {
+        padding-top: 17px;
+    }
+
+    .chart:nth-of-type(3) .chartWrapper {
+        padding-top: 29px;
+    }
+
+    #doughnutChart {
+        padding: 12px 0 5px;
     }
 
 
