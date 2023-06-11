@@ -339,7 +339,7 @@ main>div:last-child {
 
 
 
-/* SOCIAL MEDIA WIDGET STYLES */
+/* SOCIAL MEDIA STYLES */
 
 #socialWrapper {
     display: flex;
@@ -758,7 +758,7 @@ input[type='checkbox']:checked::after {
     .chart h2 {
         width: 50%;
         float: left;
-        margin-left: 19px;
+        margin-left: 13px;
     }
 
     #trafficNavbar {
@@ -804,6 +804,35 @@ input[type='checkbox']:checked::after {
         padding: 12px 0 5px;
     }
 
+
+    /* SOCIAL MEDIA STYLES */
+
+    #socialWidgets h2 {
+        width: 96%;
+        margin-bottom: 8px;
+    }
+
+    #socialWrapper {
+        flex-direction: row;
+        width: 96%;
+        margin: auto;
+        gap: 10px;
+    }
+
+    #socialWrapper svg {
+        margin: 17px 17px 17px 10px;
+        width: 60px;
+    }
+
+    #socialWrapper h3 {
+        top: 10px;
+        left: -3px;
+    }
+
+    #socialWrapper p {
+        left: -4px;
+        font-size: 2.7em;
+    }
 
 
 
