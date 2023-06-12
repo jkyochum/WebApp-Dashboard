@@ -166,7 +166,7 @@ main,
 
 main {
     flex-direction: column;
-    gap: 15px;
+    grid-row-gap: 15px;
     grid-area: main;
 }
 
@@ -179,6 +179,7 @@ main>div:nth-child(n + 4),
 #pageNameWrapper {
     flex-direction: row;
     height: 55px;
+    grid-area: pageName;
 }
 
 #pageName {
@@ -216,6 +217,7 @@ main>div:last-child {
     justify-content: space-between;
     margin: auto;
     height: 38px;
+    grid-area: alert;
 }
 
 #alert p {
@@ -238,6 +240,10 @@ main>div:last-child {
 
 /* CHART STYLES */
 
+#chartWidgets {
+    grid-area: chart;
+}
+
 .chartWrapper,
 #trafficNavbar .button::after {
     position: relative;
@@ -254,19 +260,9 @@ main>div:last-child {
 
 .chart {
     border-bottom: 1px solid var(--medium-dark-grey);
-    margin-bottom: 10px;
-}
-
-.chart:nth-of-type(1) {
-    grid-area: line;
-}
-
-.chart:nth-of-type(2) {
-    grid-area: bar;
 }
 
 .chart:nth-of-type(3) {
-    grid-area: doughnut;
     margin-bottom: 0;
 }
 
@@ -340,6 +336,10 @@ main>div:last-child {
 
 /* SOCIAL MEDIA STYLES */
 
+#socialWidgets {
+    grid-area: social;
+}
+
 #socialWidgets h2 {
     margin-bottom: 15px;
 }
@@ -405,6 +405,14 @@ main>div:last-child {
     gap: 12px;
 }
 
+#newMembersWrapper {
+    grid-area: newMembers;
+}
+
+#recentActivityWrapper {
+    grid-area: recentActivity;
+}
+
 #newMembersWrapper article,
 #recentActivityWrapper article {
     width: 92%;
@@ -460,7 +468,7 @@ main>div:last-child {
 }
 
 #recentActivityWrapper span {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 /* MESSAGE USER & SETTINGS STYLES */
@@ -481,6 +489,7 @@ main>div:last-child {
 #messageUser {
     gap: 15px;
     border-bottom: 1px solid var(--medium-dark-grey);
+    grid-area: message;
 }
 
 #messageUser,
@@ -490,6 +499,7 @@ main>div:last-child {
 
 #settings {
     gap: 14px;
+    grid-area: settings;
 }
 
 input[type='text'],
@@ -724,7 +734,7 @@ input[type='checkbox']:checked::after {
     #navIconWrapper {
         flex-direction: column;
         width: 100%;
-        height: 29vh;
+        height: 34vh;
     }
 
     #navIconWrapper .icon {
@@ -757,6 +767,10 @@ input[type='checkbox']:checked::after {
         width: 50%;
         float: left;
         margin-left: 13px;
+    }
+
+    .chart:nth-of-type(n+2) h2 {
+        margin-top: 10px;
     }
 
     #trafficNavbar {
@@ -848,6 +862,10 @@ input[type='checkbox']:checked::after {
         height: 90px;
     }
 
+    #recentActivityWrapper article {
+        position: relative;
+    }
+
     #newMembersWrapper h2,
     #recentActivityWrapper h2 {
         width: 96%;
@@ -875,9 +893,10 @@ input[type='checkbox']:checked::after {
     }
 
     .arrow {
-        position: relative;
+        position: absolute;
         text-align: right;
-        bottom: 30px;
+        top: 32px;
+        right: 4px;
     }
 
     .arrow span {
@@ -918,16 +937,31 @@ input[type='checkbox']:checked::after {
     #emailNotificationToggle,
     #publicProfileToggle {
         justify-content: flex-start;
-        gap: 30px;
+        gap: 10px;
     }
 
-    #emailNotificationsSwitch label,
+    #emailNotificationToggle label,
     #publicProfileToggle label {
-        width: 25%;
+        width: 30%;
     }
 }
 
 @media (min-width: 1024px) {
+
+    /* MAIN STYLES */
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            'pageName pageName'
+            'alert alert'
+            'chart chart'
+            'social social'
+            'newMembers recentActivity'
+            'message settings';
+    }
+
 
     /* CHART STYLES */
 
@@ -942,7 +976,7 @@ input[type='checkbox']:checked::after {
 
     .chart:nth-of-type(2),
     .chart:nth-of-type(3) {
-        height: 243px;
+        height: 253px;
     }
 
     .chart:nth-of-type(1) .chartWrapper {
@@ -961,4 +995,86 @@ input[type='checkbox']:checked::after {
     .chart:nth-of-type(3) .chartWrapper {
         height: 196px;
     }
+
+
+    /* NEW MEMBERS & RECENT ACTIVITY STYLES */
+
+    #newMembersWrapper,
+    #recentActivityWrapper {
+        margin-top: -15px;
+    }
+
+    #newMembersWrapper h2,
+    #recentActivityWrapper h2 {
+        margin-top: 10px;
+        width: 92%;
+    }
+
+    #newMembersWrapper img,
+    #recentActivityWrapper img {
+        padding-left: 6px;
+        margin-left: 3px;
+    }
+
+    #newMembersWrapper h4,
+    #recentActivityWrapper p {
+        font-size: .85em;
+    }
+
+    #recentActivityWrapper {
+        border-left: 1px solid var(--medium-dark-grey);
+    }
+
+    #recentActivityWrapper p {
+        margin-right: 32px;
+    }
+
+    #recentActivityWrapper p:nth-of-type(1) {
+        margin-right: 32px;
+        margin-top: 5px;
+    }
+
+    #recentActivityWrapper article:last-child p:nth-of-type(1) {
+        margin-top: 13px;
+    }
+
+
+    /* MESSAGE USER & SETTINGS STYLES */
+
+    #messageUser h2,
+    #searchUserText,
+    #messageUserText,
+    #messageUser button,
+    #settings h2,
+    #emailNotificationToggle,
+    #publicProfileToggle,
+    #dropDownWrapper,
+    #settingsButton {
+        width: 92%;
+    }
+
+    #messageUser,
+    #settings {
+        margin-top: -15px;
+    }
+
+    #messageUser h2,
+    #settings h2 {
+        margin-top: 10px;
+        width: 92%;
+    }
+
+    #messageUserText {
+        height: 135px;
+    }
+
+    #settings {
+        border-left: 1px solid var(--medium-dark-grey);
+    }
+
+    #emailNotificationToggle label,
+    #publicProfileToggle label {
+        width: 40%;
+    }
+
 }
