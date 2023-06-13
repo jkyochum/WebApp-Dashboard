@@ -64,20 +64,14 @@ header {
     color: var(--white);
 }
 
-#headerIconWrapper,
 #headerIcon,
+#headerSvgWrapper,
 #notificationLight,
 #profileAvatar,
 #userName {
     align-self: center;
     font-size: .8em;
     font-weight: 200;
-}
-
-header svg {
-    fill: var(--white);
-    width: 21px;
-    margin-left: 16px;
 }
 
 #notificationLight,
@@ -104,9 +98,50 @@ header svg {
     font-weight: 600;
 }
 
-#headerIconWrapper {
+#headerSvgWrapper {
     position: relative;
     height: 22px;
+}
+
+#headerSvgWrapper svg {
+    fill: var(--white);
+    width: 21px;
+    margin-left: 16px;
+    transform-origin: 50% 50%;
+}
+
+#headerSvgWrapper svg:hover {
+    animation-name: jiggle;
+    animation-duration: .3s;
+}
+
+@keyframes jiggle {
+    10% {
+        width: 40px;
+        transform: rotate(-10deg);
+    }
+
+    30% {
+        transform: rotate(0deg);
+
+    }
+
+    50% {
+        transform: scale(2.5);
+        transform: rotate(10deg);
+
+    }
+
+    70% {
+        transform: rotate(0deg);
+
+    }
+
+    90% {
+        transform: scale(1);
+        transform: rotate(-10deg);
+
+    }
 }
 
 #notificationLight {
@@ -148,13 +183,8 @@ nav {
 
 .icon {
     fill: var(--white);
-}
-
-#navIconWrapper .icon {
     width: 33px;
 }
-
-#navIconWrapper .icon:hover {}
 
 
 /* MAIN STYLES */

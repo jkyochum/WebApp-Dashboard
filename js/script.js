@@ -2,6 +2,8 @@
 const lineCtx = document.getElementById('lineChart');
 const barCtx = document.getElementById('barChart');
 const donutCtx = document.getElementById('doughnutChart');
+const alert = document.getElementById('alert');
+const alertBtn = document.getElementById('alertBtn');
 
 new Chart(lineCtx, {
     type: 'line',
@@ -94,3 +96,7 @@ new Chart(donutCtx, {
         }
     }
 });
+
+alertBtn.addEventListener('click', () => {
+    alert.style.display = 'none';
+})
