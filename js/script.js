@@ -121,18 +121,21 @@ messageBtn.addEventListener('click', () => {
 
     if (search) {
         searchField.style.borderColor = '#aba9a9';
+        searchField.placeholder = 'Search for User';
         searchEntered = true;
     }
     else {
         searchField.style.borderColor = '#e32228';
+        searchField.placeholder = '*Required';
     }
     if (message) {
         messageField.style.borderColor = '#aba9a9';
+        messageField.placeholder = 'Message for User';
         messageEntered = true;
-
     }
     else {
         messageField.style.borderColor = '#e32228';
+        messageField.placeholder = '*Required';
     }
 
     if (searchEntered && messageEntered) {
