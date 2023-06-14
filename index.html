@@ -97,7 +97,6 @@
                         <p>22,189</p>
                     </article>
                 </div>
-              
             </section>
             <div id="newMembersWrapper">
                 <h2>NEW MEMBERS</h2>
@@ -167,22 +166,22 @@
             </div>  
             <form id="messageUser">
                 <h2>MESSAGE USER</h2>
-                <input type="text" id="searchUserText" placeholder="Search for User">
-                <textarea id="messageUserText" placeholder="Message for User" spellcheck="true"></textarea>
-                <button type="button" id="btnUserMessage">SEND</button>
+                <input type="text" id="searchUserText" name="searchUserText" placeholder="Search for User">
+                <textarea id="messageUserText" name="messageUserText" placeholder="Message for User" spellcheck="true"></textarea>
+                <button type="button" id="btnUserMessage" name="btnUserMessage">SEND</button>
             </form>
             <div id="settings">
                 <h2>SETTINGS</h2>
                 <div id="emailNotificationToggle">
                     <label for="emailNotificationsSwitch">Send Email Notifications</label>
-                    <input type="checkbox" id="emailNotificationsSwitch">
+                    <input type="checkbox" id="emailNotificationsSwitch" name="emailNotificationsSwitch">
                 </div>
                 <div id="publicProfileToggle">
                     <label for="publicProfileSwitch">Set Profile to Public</label>
-                    <input type="checkbox" id="publicProfileSwitch">
+                    <input type="checkbox" id="publicProfileSwitch" name="publicProfileSwitch">
                 </div>
                 <div id="dropDownWrapper">
-                    <select id="timezone">
+                    <select id="timezone" name="timezone">
                         <option value="" disabled selected hidden>Select Timezone</option>
                         <option value="pacifc">Pacific Time</option>
                         <option value="mountain">Mountain Time</option>
@@ -191,8 +190,8 @@
                     </select>
                 </div>
                 <div id="settingsButton">
-                    <button>SAVE</button>
-                    <button>CANCEL</button>
+                    <button id="btnSave" name="btnSave">SAVE</button>
+                    <button id="btnCancel" name="btnCancel">CANCEL</button>
                 </div>
             </div>
         </main>
