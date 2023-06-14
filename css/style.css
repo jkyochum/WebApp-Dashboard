@@ -37,6 +37,7 @@ body {
     font-family: var(--page-font);
     background-color: var(--off-white);
     cursor: default;
+    min-width: 320px;
 }
 
 h2 {
@@ -83,7 +84,8 @@ header {
 }
 
 #profileAvatar img,
-#headerSvgWrapper svg:hover {
+#headerSvgWrapper svg:hover,
+#notificationBoard li {
     cursor: pointer;
 }
 
@@ -149,6 +151,32 @@ header {
     }
 }
 
+#notificationBoard {
+    position: absolute;
+    background-color: var(--html-bg-color);
+    width: 290px;
+    border-radius: 4px;
+    left: -105px;
+    padding: 0;
+}
+
+#notificationBoard li {
+    list-style-type: none;
+    text-align: center;
+    padding: 12px;
+    margin: auto;
+    width: 80%;
+
+}
+
+#notificationBoard li:nth-of-type(-n+1) {
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+#notificationBoard p {
+    font-weight: 600;
+}
+
 #notificationLight {
     display: inline-block;
     width: 5px;
@@ -168,6 +196,7 @@ header {
     width: 38px;
     vertical-align: middle;
 }
+
 
 
 /* NAVIGATION BAR STYLES */
