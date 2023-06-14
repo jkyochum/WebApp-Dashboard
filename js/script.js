@@ -4,6 +4,9 @@ const barCtx = document.getElementById('barChart');
 const donutCtx = document.getElementById('doughnutChart');
 const alert = document.getElementById('alert');
 const alertBtn = document.getElementById('alertBtn');
+const searchField = document.getElementById('searchUserText')
+const messageField = document.getElementById('messageUserText')
+const messageBtn = document.getElementById('btnUserMessage');
 
 new Chart(lineCtx, {
     type: 'line',
@@ -99,4 +102,28 @@ new Chart(donutCtx, {
 
 alertBtn.addEventListener('click', () => {
     alert.style.display = 'none';
+})
+
+messageBtn.addEventListener('click', () => {
+    const search = searchField.value;
+    const message = messageField.value;
+    if (search) {
+        searchField.style.borderColor = '#aba9a9';
+        if (message) {
+            messageField.style.borderColor = '#aba9a9';
+            window.alert(`
+            Message Sent!
+        
+            We will be in touch with you shortly.
+            Thank you for messaging us.
+            `);
+        }
+        else {
+            messageField.style.borderColor = '#e32228';
+        }
+    }
+    else {
+        searchField.style.borderColor = '#e32228';
+    }
+
 })
