@@ -8,13 +8,6 @@ const searchField = document.getElementById('searchUserText')
 const messageField = document.getElementById('messageUserText')
 const messageBtn = document.getElementById('btnUserMessage');
 
-function createAlert() {
-    window.alert(`Message Sent!
-    
-    We will be in touch with you shortly.
-    Thank you for messaging us.
-    `);
-}
 new Chart(lineCtx, {
     type: 'line',
     data: {
@@ -110,6 +103,14 @@ new Chart(donutCtx, {
 alertBtn.addEventListener('click', () => {
     alert.style.display = 'none';
 })
+
+function createAlert() {
+    window.alert(`Message Sent!
+    
+We will be in touch with you shortly.
+Thank you for contacting us.
+    `);
+}
 
 messageBtn.addEventListener('click', () => {
     let searchEntered = false;

@@ -6,6 +6,7 @@
     --header-bg-color: #7f6ecc;
     --nav-bg-color: #3e3a50;
     --main-theme-bg-color: #7667b2;
+    --light-theme-bg-color: #f0edfc;
     --html-bg-color: #d6d6d6;
     --widget-bg-color: #f0f0f0;
     --toggle-bg-color-off: #ccc;
@@ -597,7 +598,8 @@ textarea,
 input[type='text']:focus,
 textarea:focus {
     outline: none;
-    border-color: green;
+    border: 2px inset var(--medium-dark-grey);
+    background-color: var(--light-theme-bg-color);
 }
 
 textarea {
