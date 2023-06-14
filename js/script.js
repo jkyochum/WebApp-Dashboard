@@ -100,10 +100,14 @@ new Chart(donutCtx, {
     }
 });
 
+
+//Clear default alert box
 alertBtn.addEventListener('click', () => {
     alert.style.display = 'none';
 })
 
+
+//Alert function to be used by timeout function
 function createAlert() {
     window.alert(`Message Sent!
     
@@ -112,6 +116,9 @@ Thank you for contacting us.
     `);
 }
 
+
+//Message submit button handler
+//Will check for empty text fields and respond appropriately
 messageBtn.addEventListener('click', () => {
     let searchEntered = false;
     let messageEntered = false;
@@ -126,7 +133,7 @@ messageBtn.addEventListener('click', () => {
     }
     else {
         searchField.style.borderColor = '#e32228';
-        searchField.placeholder = '*Required';
+        searchField.placeholder = '*Required: Search for User';
     }
     if (message) {
         messageField.style.borderColor = '#aba9a9';
@@ -135,17 +142,15 @@ messageBtn.addEventListener('click', () => {
     }
     else {
         messageField.style.borderColor = '#e32228';
-        messageField.placeholder = '*Required';
+        messageField.placeholder = '*Required: Message for User';
     }
 
     if (searchEntered && messageEntered) {
         searchField.value = '';
         messageField.value = '';
 
+        //timeout for alert popup to allow form to clear before executing
         setTimeout(() => { createAlert() }, 10);
 
     }
-
-
-
 })
