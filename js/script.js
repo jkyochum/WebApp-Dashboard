@@ -8,6 +8,13 @@ const searchField = document.getElementById('searchUserText')
 const messageField = document.getElementById('messageUserText')
 const messageBtn = document.getElementById('btnUserMessage');
 
+function createAlert() {
+    window.alert(`Message Sent!
+    
+    We will be in touch with you shortly.
+    Thank you for messaging us.
+    `);
+}
 new Chart(lineCtx, {
     type: 'line',
     data: {
@@ -105,25 +112,36 @@ alertBtn.addEventListener('click', () => {
 })
 
 messageBtn.addEventListener('click', () => {
+    let searchEntered = false;
+    let messageEntered = false;
     const search = searchField.value;
     const message = messageField.value;
+
+
     if (search) {
         searchField.style.borderColor = '#aba9a9';
-        if (message) {
-            messageField.style.borderColor = '#aba9a9';
-            window.alert(`
-            Message Sent!
-        
-            We will be in touch with you shortly.
-            Thank you for messaging us.
-            `);
-        }
-        else {
-            messageField.style.borderColor = '#e32228';
-        }
+        searchEntered = true;
     }
     else {
         searchField.style.borderColor = '#e32228';
     }
+    if (message) {
+        messageField.style.borderColor = '#aba9a9';
+        messageEntered = true;
+
+    }
+    else {
+        messageField.style.borderColor = '#e32228';
+    }
+
+    if (searchEntered && messageEntered) {
+        searchField.value = '';
+        messageField.value = '';
+
+        setTimeout(() => { createAlert() }, 10);
+
+    }
+
+
 
 })

@@ -594,6 +594,12 @@ textarea,
     opacity: .8;
 }
 
+input[type='text']:focus,
+textarea:focus {
+    outline: none;
+    border-color: green;
+}
+
 textarea {
     height: 156px;
     padding-top: 5px;
