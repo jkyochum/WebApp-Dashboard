@@ -1,6 +1,6 @@
-* {
+/* * {
     border: 1px solid red;
-}
+} */
 
 :root {
     --header-bg-color: #7f6ecc;
@@ -24,7 +24,7 @@
 
 * {
     box-sizing: border-box;
-    cursor: default;
+    /* cursor: default; */
 }
 
 html {
@@ -63,6 +63,7 @@ header {
 #headerIcon a:visited,
 #userName {
     color: var(--white);
+    cursor: default;
 }
 
 #headerIcon,
