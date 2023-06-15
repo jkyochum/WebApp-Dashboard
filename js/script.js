@@ -3,6 +3,10 @@ const bell = document.querySelector('#headerSvgWrapper svg');
 const notificationLight = document.getElementById('notificationLight');
 const notificationBoard = document.getElementById('notificationBoard');
 let boardActive = false;
+const hourlyBtn = document.getElementById('hourly');
+const dailyBtn = document.getElementById('daily');
+const weeklyBtn = document.getElementById('weekly');
+const monthlyBtn = document.getElementById('monthly');
 const lineCtx = document.getElementById('lineChart');
 const barCtx = document.getElementById('barChart');
 const donutCtx = document.getElementById('doughnutChart');
@@ -12,26 +16,55 @@ const searchField = document.getElementById('searchUserText')
 const messageField = document.getElementById('messageUserText')
 const messageBtn = document.getElementById('btnUserMessage');
 
+//will display notifications board when called
 function openNotifications() {
     notificationBoard.setAttribute('style', 'transform: translateY(0); opacity: 1; pointer-events: auto;')
     notificationLight.style.opacity = '0';
     alert.style.display = 'none';
 }
 
+//will hide notifications board when called
 function closeNotifications() {
     notificationBoard.setAttribute('style', 'transform: translateY(-170px); opacity: 0; pointer-events: none;')
 
 }
 
-
+//Toggle notifications dropdown depending on target of click
 document.addEventListener('click', e => {
     console.log(e);
     const tag = e.target.tagName;
+    const id = e.target.id;
     if (!boardActive) {
         if (tag === 'svg' || tag === 'path') {
             openNotifications();
             boardActive = true;
         }
+
+        //changing chart type buttons
+
+        const context = document.getElementById('lineChart').getContext('2d');
+        chart = new Chart(context).Line(data);
+
+        if (id === 'hourly') {
+            chart.data.datasets.data = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1900, 2250, 1500, 2500]
+            chart.update();
+        }
+        if (id === 'daily') {
+            chart.data.datasets.data = [1750, 2250, 2000, 4000, 3500, 2750, 1750, 4900, 1250, 3500, 5500]
+            chart.destroy();
+            chart.update();
+        }
+        if (id === 'weekly') {
+
+        }
+        if (id === 'monthly') {
+
+        }
+
+
+
+
+
     }
     else if (boardActive) {
         if (tag !== 'LI' && tag !== 'UL' && tag !== 'P') {
@@ -46,37 +79,57 @@ document.addEventListener('click', e => {
 
 })
 
-
-
-
-
-// //Notification dropdown list
-// //Will display the dropdown by increasing opacity and Y axis position
-// //Will also clear the notification light and the alert box
-// bell.addEventListener('click', () => {
-
-//     if (notificationBoard.style.opacity === '0' || notificationBoard.style.opacity === '') {
-//         // notificationBoard.setAttribute('style', 'transform: translateY(0); opacity: 1; pointer-events: auto;')
-//         // notificationLight.style.opacity = '0';
-//         // alert.style.display = 'none';
-//         openNotifications();
-//         boardActive = true;
-
-//     }
-//     else {
-//         // notificationBoard.setAttribute('style', 'transform: translateY(-170px); opacity: 0; pointer-events: none;')
-//         closeNotifications();
-//         boardActive = false;
-//     }
-// })
-
-
-
-
 //Clear default alert box
 alertBtn.addEventListener('click', () => {
     alert.style.display = 'none';
 })
+
+
+const hourlyLineData = {
+    labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
+    datasets: [{
+        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1900, 2250, 1500, 2500],
+        borderWidth: 1,
+        backgroundColor: 'rgba(118, 103, 178, .3)',
+        fill: true,
+        tension: .35
+    }]
+};
+
+const dailyLineData = {
+    labels: ['1-5', '6-10', '11-15', '15-20', '21-25', '26-30'],
+    datasets: [{
+        data: [17501, 12501, 19001, 22501, 15001, 25001],
+        borderWidth: 1,
+        backgroundColor: 'rgba(118, 103, 178, .3)',
+        fill: true,
+        tension: .35
+    }]
+};
+
+const weeklyLineData = {
+    labels: ['1', '2', '3', '4'],
+    datasets: [{
+        data: [72250, 212250, 122000, 232000],
+        borderWidth: 1,
+        backgroundColor: 'rgba(118, 103, 178, .3)',
+        fill: true,
+        tension: .35
+    }]
+};
+
+const monthlyLineData = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    datasets: [{
+        data: [555750, 5155250, 5551000, 65520500, 4551500, 1557750, 6155250, 6190550, 5562250, 3155500, 9255500, 55555555],
+        borderWidth: 1,
+        backgroundColor: 'rgba(118, 103, 178, .3)',
+        fill: true,
+        tension: .35
+    }]
+};
+
+
 
 
 new Chart(lineCtx, {
