@@ -57,6 +57,7 @@ header {
     background-color: var(--header-bg-color);
     justify-content: space-around;
     height: 4em;
+    z-index: 2;
     grid-area: header;
 }
 
@@ -153,11 +154,17 @@ header {
 
 #notificationBoard {
     position: absolute;
-    background-color: var(--html-bg-color);
+    background-color: var(--light-theme-bg-color);
     width: 290px;
     border-radius: 4px;
+    top: 30px;
     left: -105px;
     padding: 0;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-170px);
+    transition: all .3s ease-in-out;
 }
 
 #notificationBoard li {
@@ -166,7 +173,6 @@ header {
     padding: 12px;
     margin: auto;
     width: 80%;
-
 }
 
 #notificationBoard li:nth-of-type(-n+1) {
@@ -793,6 +799,10 @@ input[type='checkbox']:checked::after {
     #headerIcon {
         margin-right: auto;
         padding-left: 10px;
+    }
+
+    #notificationBoard {
+        top: 38px;
     }
 
     #profileAvatar {

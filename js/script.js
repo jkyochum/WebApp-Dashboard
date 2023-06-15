@@ -1,4 +1,7 @@
 
+const bell = document.querySelector('#headerSvgWrapper svg');
+const notificationLight = document.getElementById('notificationLight');
+const notificationBoard = document.getElementById('notificationBoard');
 const lineCtx = document.getElementById('lineChart');
 const barCtx = document.getElementById('barChart');
 const donutCtx = document.getElementById('doughnutChart');
@@ -7,6 +10,30 @@ const alertBtn = document.getElementById('alertBtn');
 const searchField = document.getElementById('searchUserText')
 const messageField = document.getElementById('messageUserText')
 const messageBtn = document.getElementById('btnUserMessage');
+
+//Notification dropdown list
+//Will display the dropdown by increasing opacity and Y axis position
+//Will also clear the notification light and the alert box
+bell.addEventListener('click', () => {
+
+    if (notificationBoard.style.opacity === '0') {
+        notificationBoard.style.opacity = '1';
+        notificationBoard.style.transform = 'translateY(0)';
+        notificationLight.style.opacity = '0';
+        alert.style.display = 'none';
+    }
+    else {
+        notificationBoard.style.opacity = '0';
+        notificationBoard.style.transform = 'translateY(-170px)';
+    }
+})
+
+
+//Clear default alert box
+alertBtn.addEventListener('click', () => {
+    alert.style.display = 'none';
+})
+
 
 new Chart(lineCtx, {
     type: 'line',
@@ -99,12 +126,6 @@ new Chart(donutCtx, {
         }
     }
 });
-
-
-//Clear default alert box
-alertBtn.addEventListener('click', () => {
-    alert.style.display = 'none';
-})
 
 
 //Alert function to be used by timeout function
