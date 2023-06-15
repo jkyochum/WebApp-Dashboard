@@ -2,6 +2,7 @@
 const bell = document.querySelector('#headerSvgWrapper svg');
 const notificationLight = document.getElementById('notificationLight');
 const notificationBoard = document.getElementById('notificationBoard');
+let boardActive = false;
 const lineCtx = document.getElementById('lineChart');
 const barCtx = document.getElementById('barChart');
 const donutCtx = document.getElementById('doughnutChart');
@@ -11,22 +12,65 @@ const searchField = document.getElementById('searchUserText')
 const messageField = document.getElementById('messageUserText')
 const messageBtn = document.getElementById('btnUserMessage');
 
-//Notification dropdown list
-//Will display the dropdown by increasing opacity and Y axis position
-//Will also clear the notification light and the alert box
-bell.addEventListener('click', () => {
+function openNotifications() {
+    notificationBoard.setAttribute('style', 'transform: translateY(0); opacity: 1; pointer-events: auto;')
+    notificationLight.style.opacity = '0';
+    alert.style.display = 'none';
+}
 
-    if (notificationBoard.style.opacity === '0') {
-        notificationBoard.style.opacity = '1';
-        notificationBoard.style.transform = 'translateY(0)';
-        notificationLight.style.opacity = '0';
-        alert.style.display = 'none';
+function closeNotifications() {
+    notificationBoard.setAttribute('style', 'transform: translateY(-170px); opacity: 0; pointer-events: none;')
+
+}
+
+
+document.addEventListener('click', e => {
+    console.log(e);
+    const tag = e.target.tagName;
+    if (!boardActive) {
+        if (tag === 'svg' || tag === 'path') {
+            openNotifications();
+            boardActive = true;
+        }
     }
-    else {
-        notificationBoard.style.opacity = '0';
-        notificationBoard.style.transform = 'translateY(-170px)';
+    else if (boardActive) {
+        if (tag !== 'LI' && tag !== 'UL' && tag !== 'P') {
+            closeNotifications();
+            boardActive = false;
+        }
+        else if (tag === 'svg' || tag === 'path') {
+            closeNotifications();
+            boardActive = false;
+        }
     }
+
 })
+
+
+
+
+
+// //Notification dropdown list
+// //Will display the dropdown by increasing opacity and Y axis position
+// //Will also clear the notification light and the alert box
+// bell.addEventListener('click', () => {
+
+//     if (notificationBoard.style.opacity === '0' || notificationBoard.style.opacity === '') {
+//         // notificationBoard.setAttribute('style', 'transform: translateY(0); opacity: 1; pointer-events: auto;')
+//         // notificationLight.style.opacity = '0';
+//         // alert.style.display = 'none';
+//         openNotifications();
+//         boardActive = true;
+
+//     }
+//     else {
+//         // notificationBoard.setAttribute('style', 'transform: translateY(-170px); opacity: 0; pointer-events: none;')
+//         closeNotifications();
+//         boardActive = false;
+//     }
+// })
+
+
 
 
 //Clear default alert box

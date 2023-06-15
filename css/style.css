@@ -57,7 +57,6 @@ header {
     background-color: var(--header-bg-color);
     justify-content: space-around;
     height: 4em;
-    z-index: 2;
     grid-area: header;
 }
 
@@ -157,6 +156,7 @@ header {
     background-color: var(--light-theme-bg-color);
     width: 290px;
     border-radius: 4px;
+    box-shadow: 0px 3px 6px 0px var(--dark-grey);
     top: 30px;
     left: -105px;
     padding: 0;
