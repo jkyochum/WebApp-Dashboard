@@ -31,40 +31,12 @@ function closeNotifications() {
 
 //Toggle notifications dropdown depending on target of click
 document.addEventListener('click', e => {
-    console.log(e);
     const tag = e.target.tagName;
-    const id = e.target.id;
     if (!boardActive) {
         if (tag === 'svg' || tag === 'path') {
             openNotifications();
             boardActive = true;
         }
-
-        //changing chart type buttons
-
-        const context = document.getElementById('lineChart').getContext('2d');
-        chart = new Chart(context).Line(data);
-
-        if (id === 'hourly') {
-            chart.data.datasets.data = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1900, 2250, 1500, 2500]
-            chart.update();
-        }
-        if (id === 'daily') {
-            chart.data.datasets.data = [1750, 2250, 2000, 4000, 3500, 2750, 1750, 4900, 1250, 3500, 5500]
-            chart.destroy();
-            chart.update();
-        }
-        if (id === 'weekly') {
-
-        }
-        if (id === 'monthly') {
-
-        }
-
-
-
-
-
     }
     else if (boardActive) {
         if (tag !== 'LI' && tag !== 'UL' && tag !== 'P') {
@@ -129,21 +101,9 @@ const monthlyLineData = {
     }]
 };
 
-
-
-
-new Chart(lineCtx, {
+const configH = {
     type: 'line',
-    data: {
-        labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
-        datasets: [{
-            data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1900, 2250, 1500, 2500],
-            borderWidth: 1,
-            backgroundColor: 'rgba(118, 103, 178, .3)',
-            fill: true,
-            tension: .35
-        }]
-    },
+    data: hourlyLineData,
     options: {
         responsive: true,
         maintainAspectRatio: false,
@@ -158,7 +118,101 @@ new Chart(lineCtx, {
             }
         }
     }
-});
+};
+const configD = {
+    type: 'line',
+    data: dailyLineData,
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        plugins: {
+            legend: {
+                display: false
+            }
+        }
+    }
+};
+const configW = {
+    type: 'line',
+    data: weeklyLineData,
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        plugins: {
+            legend: {
+                display: false
+            }
+        }
+    }
+};
+const configM = {
+    type: 'line',
+    data: monthlyLineData,
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        plugins: {
+            legend: {
+                display: false
+            }
+        }
+    }
+};
+
+
+
+let myChart = new Chart(
+    document.getElementById('lineChart'),
+    configH
+);
+
+hourlyBtn.addEventListener('click', () => {
+    myChart.destroy();
+    myChart = new Chart(
+        document.getElementById('lineChart'),
+        configH
+    );
+})
+dailyBtn.addEventListener('click', () => {
+    myChart.destroy();
+    myChart = new Chart(
+        document.getElementById('lineChart'),
+        configD
+    );
+})
+weeklyBtn.addEventListener('click', () => {
+    myChart.destroy();
+    myChart = new Chart(
+        document.getElementById('lineChart'),
+        configW
+    );
+})
+monthlyBtn.addEventListener('click', () => {
+    myChart.destroy();
+    myChart = new Chart(
+        document.getElementById('lineChart'),
+        configM
+    );
+})
+
+
+
+
 
 new Chart(barCtx, {
     type: 'bar',
