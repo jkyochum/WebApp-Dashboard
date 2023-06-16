@@ -56,7 +56,7 @@ alertBtn.addEventListener('click', () => {
     alert.style.display = 'none';
 })
 
-
+//Data for the different line charts to display
 const hourlyLineData = {
     labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
     datasets: [{
@@ -101,6 +101,8 @@ const monthlyLineData = {
     }]
 };
 
+
+//Base configurations for each line chart 
 const configH = {
     type: 'line',
     data: hourlyLineData,
@@ -119,6 +121,7 @@ const configH = {
         }
     }
 };
+
 const configD = {
     type: 'line',
     data: dailyLineData,
@@ -137,6 +140,7 @@ const configD = {
         }
     }
 };
+
 const configW = {
     type: 'line',
     data: weeklyLineData,
@@ -155,6 +159,7 @@ const configW = {
         }
     }
 };
+
 const configM = {
     type: 'line',
     data: monthlyLineData,
@@ -175,12 +180,13 @@ const configM = {
 };
 
 
-
+//Instantiating the default chart shown on page
 let myChart = new Chart(
     document.getElementById('lineChart'),
     configH
 );
 
+//Each additional chart when the unique button is clicked
 hourlyBtn.addEventListener('click', () => {
     myChart.destroy();
     myChart = new Chart(
@@ -188,6 +194,7 @@ hourlyBtn.addEventListener('click', () => {
         configH
     );
 })
+
 dailyBtn.addEventListener('click', () => {
     myChart.destroy();
     myChart = new Chart(
@@ -195,6 +202,7 @@ dailyBtn.addEventListener('click', () => {
         configD
     );
 })
+
 weeklyBtn.addEventListener('click', () => {
     myChart.destroy();
     myChart = new Chart(
@@ -202,6 +210,7 @@ weeklyBtn.addEventListener('click', () => {
         configW
     );
 })
+
 monthlyBtn.addEventListener('click', () => {
     myChart.destroy();
     myChart = new Chart(
@@ -211,9 +220,7 @@ monthlyBtn.addEventListener('click', () => {
 })
 
 
-
-
-
+//Default bar chart and doughnut chart
 new Chart(barCtx, {
     type: 'bar',
     data: {
