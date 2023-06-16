@@ -549,6 +549,11 @@ main>div:last-child {
 
 /* MESSAGE USER & SETTINGS STYLES */
 
+#searchWrapper {
+    position: relative;
+    text-align: center;
+}
+
 #messageUser,
 #settings,
 #emailNotificationToggle,
@@ -644,6 +649,19 @@ textarea:focus {
     outline: none;
     border: 2px inset var(--medium-dark-grey);
     background-color: var(--light-theme-bg-color);
+}
+
+#searchResults {
+    position: absolute;
+    width: 92%;
+    height: 40px;
+    border: 1px solid var(--dark-grey);
+    box-shadow: 0px 0px 3px 0px inset;
+    left: 19px;
+    top: 33px;
+    border-radius: 5px;
+    z-index: 2;
+    background-color: var(--off-white);
 }
 
 textarea {

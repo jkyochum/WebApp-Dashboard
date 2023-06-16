@@ -13,5 +13,13 @@ const users = [
 
 function search() {
     let input = document.getElementById('searchUserText').value;
+    input = input.toLowerCase();
+    document.createElement('ul');
+    document.createElement('li');
+
+    for (let i = 0; i < users.length; i++) {
+
+    }
+
 
 }
