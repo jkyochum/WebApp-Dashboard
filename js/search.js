@@ -49,8 +49,17 @@ results.addEventListener('keypress', (e) => {
     }
 })
 
-results.addEventListener('click', (e) => {
-    console.log(e);
-    input.value = e.target.innerText;
-    ul.classList.remove('has-results');
+document.addEventListener('click', (e) => {
+    if (ul.classList.contains('has-results')) {
+        if (e.target.tagName === 'LI') {
+            console.log(e);
+            input.value = e.target.innerText;
+            ul.classList.remove('has-results');
+        }
+        else {
+            ul.classList.remove('has-results');
+        }
+    }
+
+
 })
