@@ -689,7 +689,8 @@ input[type='text'],
     padding: 7px 0 7px 10px;
 }
 
-#searchResults li:hover {
+#searchResults li:hover,
+#searchResults li:focus {
     background-color: var(--header-bg-color);
     color: var(--white);
 }

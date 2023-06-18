@@ -30,17 +30,24 @@ function search() {
         }
     }
 
-    // ul.innerHTML = '';
-
     for (let i = 0; i < results.length; i++) {
         const li = document.createElement('li');
         li.textContent = results[i];
         ul.appendChild(li);
         ul.classList.add('has-results');
+        li.tabIndex = '0';
     }
 
 
 }
+
+results.addEventListener('keypress', (e) => {
+    console.log(e);
+    if (e.key === 'Enter') {
+        input.value = e.target.innerText;
+        ul.classList.remove('has-results');
+    }
+})
 
 results.addEventListener('click', (e) => {
     console.log(e);
