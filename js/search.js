@@ -1,3 +1,4 @@
+const searchWrapper = document.getElementById('searchWrapper');
 const ul = document.querySelector('#searchResults ul');
 const results = document.getElementById('searchResults');
 const input = document.getElementById('searchUserText');
@@ -11,9 +12,10 @@ const users = [
     'John Wick',
     'Davy Jones'
 ];
+let firstFocusableEl;
+let lastFocusableEl;
 
 //filter search results based on input from user
-
 function search() {
     const results = [];
     ul.innerHTML = '';
@@ -38,28 +40,70 @@ function search() {
         li.tabIndex = '0';
     }
 
+    firstFocusableEl = results[0];
+    lastFocusableEl = results[results.length - 1];
+
+
 
 }
 
-results.addEventListener('keypress', (e) => {
+// results.addEventListener('focus', (e) => {
+//     let activeElement = document.activeElement;
+
+//     if (ul.firstChild === activeElement) {
+//         console.log('in the ul');
+//     }
+// });
+
+// function tabLoop() {
+//     let activeElement = document.activeElement;
+//     if (ul === activeElement) {
+//         console.log('UL');
+//     }
+//     console.log(activeElement.id);
+// }
+
+
+
+searchWrapper.addEventListener(/*->*/'keyup'/*<-*/, (e) => {
     console.log(e);
+    let activeElement = document.activeElement;
+    //when user presses Enter on focused item, the value will store in the input field
     if (e.key === 'Enter') {
         input.value = e.target.innerText;
         ul.classList.remove('has-results');
     }
-})
+    console.log(activeElement);
 
+
+    //I cannot figure out the logic here with 'keydown' or 'keyup'
+    //'keydown' makes the lastElementChild selectable, but skips over firstElementChild after .focus
+    //'keyup' skips the lastElementChild and gives .focus directly to firstelementChild
+    if (e.key === 'Tab') {
+        if (ul.lastElementChild === activeElement) {
+            console.log('this is the last element');
+            console.log(ul.firstchild);
+            ul.firstElementChild.focus();
+            e.preventDefault;
+        }
+    }
+});
+
+
+//event listener to select a name by mouseclick
 document.addEventListener('click', (e) => {
+    //if the classlist has results and is showing
     if (ul.classList.contains('has-results')) {
+        //if the target of the click is an 'LI'
+        //then save the value of selected name to the input field
+        //and close the list
         if (e.target.tagName === 'LI') {
-            console.log(e);
             input.value = e.target.innerText;
             ul.classList.remove('has-results');
         }
+        //otherwise, close the list
         else {
             ul.classList.remove('has-results');
         }
     }
-
-
-})
+});
