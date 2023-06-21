@@ -6,6 +6,7 @@
     --header-bg-color: #7f6ecc;
     --nav-bg-color: #3e3a50;
     --main-theme-bg-color: #7667b2;
+    --lighter-theme: #987ffa;
     --light-theme-bg-color: #f0edfc;
     --html-bg-color: #d6d6d6;
     --widget-bg-color: #f0f0f0;
@@ -224,6 +225,10 @@ nav {
 .icon {
     fill: var(--white);
     width: 33px;
+}
+
+.icon:hover {
+    cursor: pointer;
 }
 
 
@@ -724,7 +729,7 @@ input[type='checkbox']:checked {
 
 #messageUser button:active,
 #settingsButton button:nth-child(1):active {
-    background-color: var(--header-bg-color);
+    background-color: var(--lighter-theme);
 }
 
 #emailNotificationToggle,
@@ -1060,7 +1065,7 @@ input[type='checkbox']:checked::after {
 
 
     /* MESSAGE USER & SETTINGS STYLES */
-
+    #searchWrapper,
     #messageUser h2,
     #messageUserText,
     #messageUser button,
@@ -1183,6 +1188,7 @@ input[type='checkbox']:checked::after {
 
     /* MESSAGE USER & SETTINGS STYLES */
 
+    #searchWrapper,
     #messageUser h2,
     #messageUserText,
     #messageUser button,
@@ -1202,7 +1208,6 @@ input[type='checkbox']:checked::after {
     #messageUser h2,
     #settings h2 {
         margin-top: 10px;
-        width: 92%;
     }
 
     #messageUserText {

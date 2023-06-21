@@ -15,6 +15,12 @@ const alertBtn = document.getElementById('alertBtn');
 const searchField = document.getElementById('searchUserText')
 const messageField = document.getElementById('messageUserText')
 const messageBtn = document.getElementById('btnUserMessage');
+const settings = document.getElementById('settings');
+const emailToggle = document.getElementById('emailNotificationsSwitch');
+const profileToggle = document.getElementById('publicProfileSwitch');
+const timezone = document.getElementById('timezone');
+const saveBtn = document.getElementById('btnSave');
+const cancelBtn = document.getElementById('btnCancel');
 
 
 
@@ -32,19 +38,23 @@ function closeNotifications() {
 
 //Toggle notifications dropdown depending on target of click
 document.addEventListener('click', e => {
-    const tag = e.target.tagName;
+    const target = e.target;
+    console.log(e);
     if (!boardActive) {
-        if (tag === 'svg' || tag === 'path') {
-            openNotifications();
-            boardActive = true;
+        //check that navigation svgs are not being clicked to activate notification board
+        if (!target.classList.contains('icon')) {
+            if (target.tagName === 'svg' || target.tagName === 'path') {
+                openNotifications();
+                boardActive = true;
+            }
         }
     }
     else if (boardActive) {
-        if (tag !== 'LI' && tag !== 'UL' && tag !== 'P') {
+        if (target.tagName !== 'LI' && target.tagName !== 'UL' && target.tagName !== 'P') {
             closeNotifications();
             boardActive = false;
         }
-        else if (tag === 'svg' || tag === 'path') {
+        else if (target.tagName === 'svg' || target.tagName === 'path') {
             closeNotifications();
             boardActive = false;
         }
@@ -334,14 +344,6 @@ messageBtn.addEventListener('click', () => {
 
     }
 });
-
-
-const settings = document.getElementById('settings');
-const emailToggle = document.getElementById('emailNotificationsSwitch');
-const profileToggle = document.getElementById('publicProfileSwitch');
-const timezone = document.getElementById('timezone');
-const saveBtn = document.getElementById('btnSave');
-const cancelBtn = document.getElementById('btnCancel');
 
 
 //save settings input values to local storage
