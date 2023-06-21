@@ -39,14 +39,12 @@ function closeNotifications() {
 //Toggle notifications dropdown depending on target of click
 document.addEventListener('click', e => {
     const target = e.target;
-    console.log(e);
     if (!boardActive) {
+
         //check that navigation svgs are not being clicked to activate notification board
-        if (!target.classList.contains('icon')) {
-            if (target.tagName === 'svg' || target.tagName === 'path') {
-                openNotifications();
-                boardActive = true;
-            }
+        if (target.classList.contains('bell')) {
+            openNotifications();
+            boardActive = true;
         }
     }
     else if (boardActive) {

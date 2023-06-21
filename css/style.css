@@ -222,6 +222,11 @@ nav {
     justify-content: space-around;
 }
 
+#navIconWrapper a {
+    align-self: center;
+    padding-top: 7px;
+}
+
 .icon {
     fill: var(--white);
     width: 33px;
