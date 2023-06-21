@@ -47,45 +47,43 @@ function search() {
 
 }
 
-// results.addEventListener('focus', (e) => {
-//     let activeElement = document.activeElement;
 
-//     if (ul.firstChild === activeElement) {
-//         console.log('in the ul');
-//     }
-// });
-
-// function tabLoop() {
-//     let activeElement = document.activeElement;
-//     if (ul === activeElement) {
-//         console.log('UL');
-//     }
-//     console.log(activeElement.id);
-// }
-
-
-
-searchWrapper.addEventListener(/*->*/'keyup'/*<-*/, (e) => {
+searchWrapper.addEventListener('keydown', (e) => {
     console.log(e);
     let activeElement = document.activeElement;
+    let shiftDown = false;
+
     //when user presses Enter on focused item, the value will store in the input field
     if (e.key === 'Enter') {
         input.value = e.target.innerText;
         ul.classList.remove('has-results');
     }
-    console.log(activeElement);
 
-
-    //I cannot figure out the logic here with 'keydown' or 'keyup'
-    //'keydown' makes the lastElementChild selectable, but skips over firstElementChild after .focus
-    //'keyup' skips the lastElementChild and gives .focus directly to firstelementChild
+    //loop from last child to first child on tab
     if (e.key === 'Tab') {
+
+        //if last element is active and shift is pressed then continue default bahavior
+        //otherwise add focus to the first element in the list
         if (ul.lastElementChild === activeElement) {
-            console.log('this is the last element');
-            console.log(ul.firstchild);
-            ul.firstElementChild.focus();
-            e.preventDefault;
+            if (e.shiftKey) {
+                return;
+            }
+            else {
+                e.preventDefault();
+                ul.firstElementChild.focus();
+            }
         }
+    }
+
+    //if shift and tab are pressed, and the first element has focus, then direct focus to last element
+    if (e.shiftKey) {
+        if (e.key === 'Tab') {
+            if (ul.firstElementChild === activeElement) {
+                e.preventDefault();
+                ul.lastElementChild.focus();
+            }
+        }
+
     }
 });
 
