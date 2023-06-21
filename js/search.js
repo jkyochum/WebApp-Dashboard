@@ -12,8 +12,6 @@ const users = [
     'John Wick',
     'Davy Jones'
 ];
-let firstFocusableEl;
-let lastFocusableEl;
 
 //filter search results based on input from user
 function search() {
@@ -32,6 +30,8 @@ function search() {
         }
     }
 
+    //looping through input results list and adding them to html
+    //and giving each item a 
     for (let i = 0; i < results.length; i++) {
         const li = document.createElement('li');
         li.textContent = results[i];
@@ -39,19 +39,12 @@ function search() {
         ul.classList.add('has-results');
         li.tabIndex = '0';
     }
-
-    firstFocusableEl = results[0];
-    lastFocusableEl = results[results.length - 1];
-
-
-
 }
 
 
+//event listener chacking for keypresses inside of search results list
 searchWrapper.addEventListener('keydown', (e) => {
-    console.log(e);
     let activeElement = document.activeElement;
-    let shiftDown = false;
 
     //when user presses Enter on focused item, the value will store in the input field
     if (e.key === 'Enter') {
@@ -83,7 +76,6 @@ searchWrapper.addEventListener('keydown', (e) => {
                 ul.lastElementChild.focus();
             }
         }
-
     }
 });
 

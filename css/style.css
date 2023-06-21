@@ -1062,7 +1062,6 @@ input[type='checkbox']:checked::after {
     /* MESSAGE USER & SETTINGS STYLES */
 
     #messageUser h2,
-    #searchUserText,
     #messageUserText,
     #messageUser button,
     #settings h2,
@@ -1185,7 +1184,6 @@ input[type='checkbox']:checked::after {
     /* MESSAGE USER & SETTINGS STYLES */
 
     #messageUser h2,
-    #searchUserText,
     #messageUserText,
     #messageUser button,
     #settings h2,

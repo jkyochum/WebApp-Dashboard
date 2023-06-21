@@ -16,17 +16,18 @@ const searchField = document.getElementById('searchUserText')
 const messageField = document.getElementById('messageUserText')
 const messageBtn = document.getElementById('btnUserMessage');
 
+
+
 //will display notifications board when called
 function openNotifications() {
-    notificationBoard.setAttribute('style', 'transform: translateY(0); opacity: 1; pointer-events: auto;')
+    notificationBoard.setAttribute('style', 'transform: translateY(0); opacity: 1; pointer-events: auto;');
     notificationLight.style.opacity = '0';
     alert.style.display = 'none';
 }
 
 //will hide notifications board when called
 function closeNotifications() {
-    notificationBoard.setAttribute('style', 'transform: translateY(-170px); opacity: 0; pointer-events: none;')
-
+    notificationBoard.setAttribute('style', 'transform: translateY(-170px); opacity: 0; pointer-events: none;');
 }
 
 //Toggle notifications dropdown depending on target of click
@@ -49,12 +50,12 @@ document.addEventListener('click', e => {
         }
     }
 
-})
+});
 
 //Clear default alert box
 alertBtn.addEventListener('click', () => {
     alert.style.display = 'none';
-})
+});
 
 //Data for the different line charts to display
 const hourlyLineData = {
@@ -193,7 +194,7 @@ hourlyBtn.addEventListener('click', () => {
         document.getElementById('lineChart'),
         configH
     );
-})
+});
 
 dailyBtn.addEventListener('click', () => {
     myChart.destroy();
@@ -201,7 +202,7 @@ dailyBtn.addEventListener('click', () => {
         document.getElementById('lineChart'),
         configD
     );
-})
+});
 
 weeklyBtn.addEventListener('click', () => {
     myChart.destroy();
@@ -209,7 +210,7 @@ weeklyBtn.addEventListener('click', () => {
         document.getElementById('lineChart'),
         configW
     );
-})
+});
 
 monthlyBtn.addEventListener('click', () => {
     myChart.destroy();
@@ -217,7 +218,7 @@ monthlyBtn.addEventListener('click', () => {
         document.getElementById('lineChart'),
         configM
     );
-})
+});
 
 
 //Default bar chart and doughnut chart
@@ -332,4 +333,71 @@ messageBtn.addEventListener('click', () => {
         setTimeout(() => { createAlert() }, 10);
 
     }
-})
+});
+
+
+const settings = document.getElementById('settings');
+const emailToggle = document.getElementById('emailNotificationsSwitch');
+const profileToggle = document.getElementById('publicProfileSwitch');
+const timezone = document.getElementById('timezone');
+const saveBtn = document.getElementById('btnSave');
+const cancelBtn = document.getElementById('btnCancel');
+
+
+//save settings input values to local storage
+saveBtn.addEventListener('click', e => {
+    const timezoneVal = timezone.value;
+    let isEmailChecked = false;
+    let isProfileChecked = false;
+    if (emailToggle.checked) {
+        isEmailChecked = 'true';
+    }
+    else {
+        emailToggle.value = 'off';
+        isEmailChecked = false;
+    }
+    if (profileToggle.checked) {
+        isProfileChecked = 'true';
+    }
+    else {
+        profileToggle.value = 'off';
+        isProfileChecked = false;
+    }
+    localStorage.setItem('emailToggle', isEmailChecked);
+    localStorage.setItem('profileToggle', isProfileChecked);
+    localStorage.setItem('timezone', timezoneVal);
+    console.log(e);
+});
+
+//clear localStorage and return inputs to default values
+cancelBtn.addEventListener('click', () => {
+    localStorage.clear();
+    timezone.value = '';
+    emailToggle.checked = false;
+    profileToggle.checked = false;
+});
+
+
+//when the page loads, so does localStorage values for settings widget
+window.onload = function () {
+    if (localStorage.length > 0) {
+        const timezoneVal = localStorage.getItem('timezone');
+        const emailToggleVal = localStorage.getItem('emailToggle');
+        const profileToggleVal = localStorage.getItem('profileToggle');
+        timezone.value = timezoneVal;
+        if (emailToggleVal === 'true') {
+            emailToggle.checked = true;
+        }
+        else {
+            emailToggle.checked = false;
+        }
+        if (profileToggleVal === 'true') {
+            profileToggle.checked = true;
+        }
+        else {
+            profileToggle.checked = false;
+        }
+    }
+}
+
+
