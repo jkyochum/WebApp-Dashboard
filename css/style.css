@@ -542,6 +542,7 @@ main>div:last-child {
 }
 
 #newMembersWrapper h4,
+#recentActivityWrapper h4,
 #recentActivityWrapper p {
     font-size: .8em;
 }
@@ -556,6 +557,7 @@ main>div:last-child {
     color: var(--main-theme-bg-color);
 }
 
+#recentActivityWrapper h4,
 #recentActivityWrapper p {
     line-height: 1.25em;
     margin: 0 auto;
@@ -1059,7 +1061,7 @@ input[type='checkbox']:checked::after {
     }
 
     #newMembersWrapper h4,
-    #recentActivityWrapper p:nth-of-type(1) {
+    #recentActivityWrapper h4:nth-of-type(1) {
         margin-top: 15px;
     }
 
@@ -1202,6 +1204,7 @@ input[type='checkbox']:checked::after {
     }
 
     #newMembersWrapper h4,
+    #recentActivityWrapper h4,
     #recentActivityWrapper p {
         font-size: .85em;
     }
@@ -1210,16 +1213,16 @@ input[type='checkbox']:checked::after {
         border-left: 1px solid var(--medium-dark-grey);
     }
 
-    #recentActivityWrapper p,
-    #recentActivityWrapper p:nth-of-type(1) {
+    #recentActivityWrapper h4,
+    #recentActivityWrapper p {
         margin-right: 32px;
     }
 
-    #recentActivityWrapper p:nth-of-type(1) {
+    #recentActivityWrapper h4 {
         margin-top: 5px;
     }
 
-    #recentActivityWrapper article:last-child p:nth-of-type(1) {
+    #recentActivityWrapper article:last-child h4 {
         margin-top: 13px;
     }
 
